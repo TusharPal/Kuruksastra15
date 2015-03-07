@@ -18,10 +18,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.a1kesamose.kuruksastra15.R;
+import com.a1kesamose.kuruksastra15.adapter.NavigationDrawerListAdapter;
 
 public class NavigationDrawerFragment extends Fragment
 {
@@ -32,8 +32,8 @@ public class NavigationDrawerFragment extends Fragment
     private int mCurrentSelectedPosition = 0;
     private boolean mFromSavedInstanceState;
     private boolean mUserLearnedDrawer;
-    private String navigationDrawerItemTitles[] = {"Home", "Events", "Pro Shows", "KS Upahaar", "Sponsors", "Contacts"};
-
+    private String navigationDrawerItemTitles[] = {"About KS", "Events", "Pro Shows", "KS Upahaar", "Sponsors", "Contacts"};
+    private NavigationDrawerListAdapter navigationDrawerListAdapter;
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerListView;
     private View mFragmentContainerView;
@@ -69,17 +69,18 @@ public class NavigationDrawerFragment extends Fragment
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
-        mDrawerListView = (ListView) inflater.inflate(R.layout.fragment_navigation_drawer, container, false);
+        navigationDrawerListAdapter = new NavigationDrawerListAdapter(getActivity().getApplicationContext(), mCurrentSelectedPosition);
+        mDrawerListView = (ListView)inflater.inflate(R.layout.fragment_navigation_drawer, container, false);
+        mDrawerListView.setAdapter(navigationDrawerListAdapter);
         mDrawerListView.setOnItemClickListener(new AdapterView.OnItemClickListener()
         {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id)
             {
+                navigationDrawerListAdapter.setItemSelectedPosition(position);
                 selectItem(position);
             }
         });
-        mDrawerListView.setAdapter(new ArrayAdapter<String>(getActionBar().getThemedContext(), android.R.layout.simple_list_item_activated_1, android.R.id.text1, navigationDrawerItemTitles));
-        mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);
 
         return mDrawerListView;
     }

@@ -2,5 +2,6 @@
 <resources>
     <color name="yellow">#ffca00</color>
     <color name="divider_grey">#cacaca</color>
-    <color name="background_grey">#262523</color>
+    <color name="background_dark_grey">#262523</color>
+    <color name="background_light_grey">#545454</color>
 </resources>

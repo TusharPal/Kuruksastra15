@@ -8,7 +8,7 @@
         android:id="@+id/viewPager_fragment_events"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/background_grey">
+        android:background="@color/background_dark_grey">
 
         <android.support.v4.view.PagerTabStrip
             android:id="@+id/pagerTabStrip_fragment_events"
