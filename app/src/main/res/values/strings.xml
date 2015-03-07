@@ -3,6 +3,8 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
+    <string name="home_screen_desc">SASTRA University and Coca-Cola serve you the latest edition of KURUKSASTRA ‘15, a National level cultural fest – and this time it’s spicier and tastier! Come and indulge your senses in the most sumptuous buffet of events spanning 3 days and tease your taste buds by savoring the mouthwatering delicacies offered by each of our clusters. With a myriad of creative and euphoric events, showcase your expertise in this cultural extravaganza and prove your mettle by donning different chef hats and smoking the stage! Ignite the passion and vigor in your stomach and soup up as it is going to be LEGEN-wait for it- DARY, this spring! Good Luck and Bon Appetit!</string>
+
     <string name="app_name">Kuruksastra\'15</string>
     <string name="event_label">Events</string>
     <string name="action_settings">Settings</string>
