@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_grey">
+
+    <LinearLayout
+        android:id="@+id/media_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/media_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/music"
+            android:contentDescription="@string/common_content_desc"
+            android:layout_gravity="center_horizontal"
+            android:padding="5dp"/>
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/music_events_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/media_header"
+        android:padding="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--Eastern Band-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/eastern_band"
+                android:textColor="@color/yellow"
+                android:textSize="20sp"
+                android:paddingBottom="5dp"
+                android:paddingTop="10dp"
+                android:paddingLeft="10dp"
+                android:layout_gravity="left"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:paddingTop="12dp"
+                android:text="@string/eastern_band_desc"
+                android:textSize="15sp"
+                android:textColor="#ffffff"/>
+            <View
+                android:layout_width="320dp"
+                android:layout_height="0.5dp"
+                android:paddingRight="30dp"
+                android:paddingLeft="30dp"
+                android:paddingTop="25dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@color/divider_grey"
+                />
+
+            <!--Western Solo-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/west_solo"
+                android:textColor="@color/yellow"
+                android:textSize="20sp"
+                android:paddingBottom="5dp"
+                android:paddingTop="10dp"
+                android:paddingLeft="10dp"
+                android:layout_gravity="left"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:paddingTop="12dp"
+                android:text="@string/west_solo_desc"
+                android:textSize="15sp"
+                android:textColor="#ffffff"/>
+            <View
+                android:layout_width="320dp"
+                android:layout_height="0.5dp"
+                android:paddingRight="30dp"
+                android:paddingLeft="30dp"
+                android:paddingTop="25dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@color/divider_grey"
+                />
+
+            <!--Carnatic Solo-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/classic_solo"
+                android:textColor="@color/yellow"
+                android:textSize="20sp"
+                android:paddingBottom="5dp"
+                android:paddingTop="10dp"
+                android:paddingLeft="10dp"
+                android:layout_gravity="left"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:paddingTop="12dp"
+                android:text="@string/classic_solo_desc"
+                android:textSize="15sp"
+                android:textColor="#ffffff"/>
+            <View
+                android:layout_width="320dp"
+                android:layout_height="0.5dp"
+                android:paddingRight="30dp"
+                android:paddingLeft="30dp"
+                android:paddingTop="25dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@color/divider_grey"
+                />
+
+            <!--Instrumental Solo-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/inst_solo"
+                android:textColor="@color/yellow"
+                android:textSize="20sp"
+                android:paddingBottom="5dp"
+                android:paddingTop="10dp"
+                android:paddingLeft="10dp"
+                android:layout_gravity="left"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:paddingTop="12dp"
+                android:text="@string/inst_solo_desc"
+                android:textSize="15sp"
+                android:textColor="#ffffff"/>
+            <View
+                android:layout_width="320dp"
+                android:layout_height="0.5dp"
+                android:paddingRight="30dp"
+                android:paddingLeft="30dp"
+                android:paddingTop="25dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@color/divider_grey"
+                />
+            <!--KS Idol-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ks_idol"
+                android:textColor="@color/yellow"
+                android:textSize="20sp"
+                android:paddingBottom="5dp"
+                android:paddingTop="10dp"
+                android:paddingLeft="10dp"
+                android:layout_gravity="left"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:paddingTop="12dp"
+                android:text="@string/ks_idol_desc"
+                android:textSize="15sp"
+                android:textColor="#ffffff"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

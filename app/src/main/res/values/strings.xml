@@ -1,0 +1,167 @@
+<resources>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="app_name">Kuruksastra\'15</string>
+    <string name="event_label">Events</string>
+    <string name="action_settings">Settings</string>
+    <string name="media_cluster">Media</string>
+    <string name="thespian_cluster">Thespian</string>
+    <string name="englits_cluster">English Lits</string>
+    <string name="hindilits_cluster">Hindi Lits</string>
+    <string name="tamillits_cluster">Tamil Lits</string>
+    <string name="telugulits_cluster">Telugu Lits</string>
+    <string name="dance_cluster">Dance</string>
+    <string name="music_cluster">Music</string>
+    <string name="arts_cluster">Fine Arts</string>
+    <string name="common_content_desc">Image</string>
+
+    <!--SFH-->
+    <string name="salle_de_cinema">Salle De Cinema(Short film)</string>
+    <string name="short_film_desc">Short film is to Feature film what Maggi is to Hakka Noodles. The only difference is time and money. The art remains the same. The recipe for a short film is simple. Impress your audience. The butter is on the popcorn. The straw is in the soda cup. The audience is ready. Are you?\n\n</string>
+    <string name="minute_made">Minute Made(Ad Film)</string>
+    <string name="min_made_desc">80% of decisions made for buying food products can be attributed to the products’ advertisements. Minute made tests the unique ability of being able to come up with a creative idea that is funny, thoughtful and/or catchy. But can you do it before someone makes a glass of tang?\n\n</string>
+    <string name="say_cheese">Say Cheese(Online Photography)</string>
+    <string name="say_cheese_desc">Like cooking, photography is an art form that is dying. You go around thinking you can cook, but you know you are owned when you taste your mother’s cooking. Only an expert can make everyone shut up. So pick up that camera and prove to the world, who the mother of all shutterbugs is.</string>
+    <string name="movie_quiz">Shaken, Not Stirred(Movie Quiz)</string>
+    <string name="movie_quiz_desc">The Ultimate Movie Geek Battle is back. All those movie debates over lunch and dinner maybe the only arsenal you need. Suit up and prepare yourself. No Prisoners. No Mercy. Forth Eorlingas!\n\n</string>
+
+    <!--Dramatics Cluster-->
+    <string name="one_act_play">Tempura(One Act Play)</string>
+    <string name="one_act_play_desc">Quintessentially, Tempura consists of vegetables that have been battered and deep fried. Bringing out the freshest and most skilled talent to the intensely heated arena of drama, we present the flagship event of Dramatics at Kuruksastra ’15, Tempura. The roast is now passé, Tempura is here.\n\n</string>
+    <string name="concasse">Concasse(Online Script Writing)</string>
+    <string name="concasse_desc">Writing requires bravery, scriptwriting more so. If you are a script writer, write the deepest and truest you can. Writing, in essence is quite like concasse. You choose your ingredients, peel and deseed, and then dice them up to create a delectable delight. We’re not looking for chefs, but if you think you can mince your words quite literally, then Concasse is the event for you.</string>
+    <string name="flambe">Flambé(Screenplay)</string>
+    <string name="flambe_desc">Flambé: the exquisite and flamboyant art of tableside food presentation. Flambéing is an art form used by the French chefs since time immemorial to grab eyeballs. Moving out from the kitchen, and on to the stage, the art of screenplay comes closest to flambéing. Concoct the most visually appealing flambé on stage and get ready to get noticed.\n\n</string>
+    <string name="tossed">Tossed Salad</string>
+    <string name="tossed_desc">A dollop of happiness. A hint of excitement. A pinch of anxiety. All of this garnished with truckloads of drama, sugar, spice and everything nice. Witness the creation of the most fun filled, lip smacking tossed salad ever, at Kuruksastra ’15.\n\nVenue\nTime:</string>
+
+    <!--English Lits-->
+    <string name="gen_quiz">Food For Thought(Gen Quiz)</string>
+    <string name="gen_quiz_desc">The Gen Quiz at KS 15. The quiz will your test your knowledge about the world in general. Prepare to face off against the Masterminds and come through with flying colours. Get ready to get your brains flambéed.\n\n</string>
+    <string name="spent_quiz">Strawberries And Cream(SPENT Quiz)</string>
+    <string name="spent_quiz_desc">If you’re sports fanatic or cannot get enough of entertainment then this is the place for you to be. Prepare to get served!\n\n</string>
+    <string name="av_quiz">flAVour(AV Quiz)</string>
+    <string name="av_quiz_desc">Sugar, spice and everything nice – the AV quiz at KS ’15 is set to spice you up with the essence of music and pop culture. AVid tasters are welcome.\n\n</string>
+    <string name="dumbc">Mouthful(Dumb Charades)</string>
+    <string name="dumbc_desc">Do you think you have the ability to convey something to your friends without uttering a single word? Enthral us with your miming skills and show off your chemistry with your team-mates. It’s okay if you can bite more than you can chew, you can always act it out.\n\n</string>
+    <string name="cocktail">Cocktail(Potpourri)</string>
+    <string name="cocktail_desc">An amalgamation of all events that happen at English Lits. Be prepared to face any challenge thrown at you including miming, speaking, quizzes and word events. A multitude of courses to whet your appetite, so get your creative juices flowing!\n\n</string>
+    <string name="jam">JAM(Just A Minute)</string>
+    <string name="jam_desc">Are you that garrulous person in your gang who can go nuts with the given topic? Or if you like to point out errors in someone else\'s speech you don\’t need to go further than JAM, the signature event at English Lits. Spread over a minute, it promises to leave you hungry for more.\n\n</string>
+    <string name="extempore">Wise Crackers(Extempore)</string>
+    <string name="extempore_desc">What would you do if you had to face the unknown? Gear up to ramble on without prior preparation. Extempore will challenge your imagination and will be a test of your ability to portray it effectively. It doesn\’t matter if your jokes are bitter or sweet; just don’t forget to be funny.\n\n</string>
+    <string name="debate">The Roast(Debate)</string>
+    <string name="debate_desc">Do you like to argue relentlessly to get your point across? Do you like to leave opponents dumb founded with your eloquence? Then this is the perfect platform for you to showcase your talent with words. Let the feast begin!\n\n</string>
+    <string name="wtgw">What\’s The Good Word</string>
+    <string name="wtgw_desc">Can you adroitly grasp the finer nuances of Ye Olde English? Glean hidden meanings from seemingly innocuous words? It is in fact a language difficult to master. A plethora of word games like etymologies, anagrams and rebuses. A host of questions that boggle your mind. We know it\'s on the tip of your tongue, but What\'s The Good Word?\n\n</string>
+    <string name="crossword">Square Meal(Crossword)</string>
+    <string name="crossword_desc">Your ability to solve cryptic clues set in a two-dimensional grid will be tested in this event. We will put our best efforts into giving Ximenians a run for their money while retaining the integrity of the grid. So gather round for your three squares of the day!\n\n</string>
+
+    <!--Hindi Lits-->
+    <string name="hindi_antakshari">Raseele Sur(ANTAKSHARI)</string>
+    <string name="hindi_antakshari_desc">\n\n</string>
+    <string name="hindi_extempore_desc">Apki vanni ki fruttyness ki pariksha li jayegi\n\n</string>
+    <string name="hindi_extempore">Tuti Fruity Vani(Extempore)</string>
+    <string name="hindi_dumbc">Barfi(Dumb C)</string>
+    <string name="hindi_dumbc_desc">Kitna samajhte hai aap apne sathi ko, bina bole, bina muh khole, dil ki baat bujho to jane...\n\n</string>
+    <string name="hindi_jam">JAM</string>
+    <string name="hindi_jam_desc">Theekhi mirchi: soch samajh ke kerna bang verna milega bura punishment!\n\n</string>
+    <string name="fun_event">Khatta Meetha(Fun Event)</string>
+    <string name="fun_event_desc">Hota to sabke paas hai, par koi istemaal nhi karta...dimaag ke har kone ka poorn istemaal krne ko kar denge hum majboor.\n\n</string>
+    <string name="navsratna">Navaratna(Flag Event)</string>
+    <string name="navaratna_desc">Milenge kai ratna,kuch khatte,kuch meethe,kuch teekhe to kuch karare, jeevan ki is thali me jo bhar laega sare ratna wahi kehlaega hamara NAVRATNA! \n\n</string>
+    <string name="garam_masala">Garam Masala(Creative Writing)</string>
+    <string name="garam_masala_desc">Apne bat ko batane ki shamta dikhaiye apne  likhne ki prathibha se!! Vishe de diya jayega apko diye gaye samay mai sabse rachnatmak tareeke se likhna hai.\n\n</string>
+    <string name="hindi_debate">Chai Pe Charcha(Debate)</string>
+    <string name="hindi_debate_desc">Apke bolne aur samajhne ki shamta ko dekha jayegi. vishe bharat se sambhandit kuch bhi diya jaa sakta hai.\n\n</string>
+    <string name="india_quiz">Chatpata Bharat(India Quiz)</string>
+    <string name="india_quiz_desc">\n\n</string>
+    
+    
+    <!--Music-->
+    <string name="eastern_band">Jigardhanda(Eastern Band)</string>
+    <string name="eastern_band_desc">Come and be a part Kuruksastra\'s battle of bands where the best bands spice up with their tastes and melt the hearts of the audience. Prove that your symphony can outclass any other, that your melody is beyond reproach, and that you can dish out the beats to keep our feet tapping!\n\n</string>
+    <string name="west_solo">Brownie Bite(Western Solo)</string>
+    <string name="west_solo_desc">Woo the crowd with the magic of pure vocals at our very own Kuruksastra stage. This euphoria is only to be experienced and cannot be expressed in words! Come and add a tinge of melody to the stage that awaits your soulful performance\n\n.</string>
+    <string name="classic_solo">Raaga Rasam(Carnatic Solo)</string>
+    <string name="classic_solo_desc">For all those budding classical vocalists out there, or even those in bloom, unleash the power of your voice in the true discipline and grace of classical melody, seize the chance and sing your heart out, enchanting us with the divine bliss!\n\n</string>
+    <string name="inst_solo">Raagam Taalam(Instrumental Solo)</string>
+    <string name="inst_solo_desc">Music has no language! Do you think you can recreate the magic created by maestros like Late Pandit Ravi Shankar, Pandit Hari Prasad Chaurasia, Ustad Zakir Hussain and many others? If you think so, then let your instruments speak in Raagam Taalam at Kuruksastra\'15!\n\n</string>
+    <string name="ks_idol">KS Idol</string>
+    <string name="ks_idol_desc">Do you think you have it in you to become an Indian music idol? Do you think you are the favorite flavor of the lot? We need say no more, our words surely cannot match your dulcet notes. So without further ado, come to Kuruksastra where the best vocalists compete against each other through different challenges for the crown of the best singer - The KURUKSASTRA IDOL!\n\n</string>
+
+    <!--Dance-->
+    <string name="solo_dance">Nritya(Solo Classical Dance)</string>
+    <string name="solo_dance_desc">A mela in a city rich with history, is incomplete without the classical dance form. The stage is set for you to portray the grace in your dance with the abhinaya and jathis. It\’s your time to stand out and show your talent in any classical style dance form. With the perfect blend of all the ingredients of classical dance, we bring you NRITYA.\n\n</string>
+    <string name="sugar_n_spice">Sugar \'n\' Spice(Theme)</string>
+    <string name="sugar_n_spice_desc">Do you have a story to tell? Do you all express stories with bewitching eyea blended with the grace in your every step? Then we have the perfect stage for you! With perfect combination of music and dance, entrap the audience in your story. The stage is yours to show the power of the thandav. With sugar, spice and more variety in dance, We present to you…Sugar \'n\' Spice(Theme).\n\n</string>
+    <string name="brain_on_boots">Brain On Boots</string>
+    <string name="brain_on_boots_desc">Here at Brain on Boots we give you a stage to both prove your identity, and lose yourself in the beat and the moment. Gear up to flaunt and compete against the best crews in India, because the festival starts here.\n\n</string>
+    <string name="salt_pepper">Salt And Pepper</string>
+    <string name="salt_pepper_desc">Just as salt and pepper complete one another on a dining table, this event requires a partnership of two to compliment each other and give out a mouthful appetizer.\n\n</string>
+    <string name="solollipop">Solollipop</string>
+    <string name="solollipop_desc">Ever had the guts to try something alone? Have a taste of Bertie Botts Every Flavoured Beans. Either you\'ll get to like the taste or end up getting a familiar one. Whatever be the result, you would have found yourself immersed in a sugar rush.\n\n</string>
+
+    <!--Fine arts-->
+    <string name="nut_corner">Nut Corner(Paper Cup Designing)</string>
+    <string name="nut_corner_desc">You\'ve seen art on paper, canvas, cloth even wood, but have you seen one on paper cups? Connect with your creativity and impress us with your oeuvre d\'art ! Create a magnificent work of art on a cup, and prove that art is really your \'cup of tea\'\n\n</string>
+    <string name="avial">Avial(Vegetable Carving)</string>
+    <string name="avial_desc">Thinking out of the box cannot get much better than this! Carucate the most flaunting design from vegetable into objects which leave audience spellbound. Enchant us with your skills and get chopping!\n\n</string>
+    <string name="clay_modelling">Chocolate Praline(Clay Modelling)</string>
+    <string name="clay_modelling_desc">You think dirt is uninteresting, boring, dull? Change our tastes by giving a different flavour - try clay modeling! Work your hands on a lump of clay and cook up great work of art! Show how impressive you are and turn the mundane into a masterpiece!\n\n</string>
+    <string name="dark_fantasy">Dark Fantasy(Shadow Art)</string>
+    <string name="dark_fantasy_desc">There is something lurking in the dark! Manipulate simple objects and make the shadows dance with life. If you love perspectives and angles, then this event is a piece of cake for you!\n\n</string>
+    <string name="finger_painting">Falooda(Finger Painting)</string>
+    <string name="finger_painting_desc">Are your fingers like Midas\'s golden touch? Do they have the ablility to add spice to a blank canvas? Design a mellifluous work of art with an intricate blend of appealing colours and imagination that is finger-licking good!\n\n</string>
+    <string name="free_delivery">Free Delivery(Online Competition)</string>
+    <string name="free_delivery_desc">Come one! Come all! Arts at Kuruksastra provides you with a stage that will test your creativity and judge the inner foodie in you! So don\’t hold back, go ahead and produce any art that is mouth-watering and appealing!\n\n</string>
+
+
+    <!--Tamil Lits-->
+    <string name="tamil_quiz">“அமிழ்”தினை யொத்த தமிழ்த் ”தினை”(Tamil Quiz)</string>
+    <string name="tamil_quiz_desc">உயர்திணையை உயர்த்தும் உயர்திண்மைத் தமிழ் - வழங்கும் அமிழ்தினை அறிந்தோர் ஆடும் ஆட்டம் - தமிழாட்டம்.\n\n</string>
+    <string name="tamil_extempore">சொல்லுக்"கூழ்" இல்லை(Extempore)</string>
+    <string name="tamil_extempore_desc">வாழ்விக்கும் சொல்லுக்கு, ஊழ் வந்து சேருமோ? சொலல்வல்லாரை இகல்வெல்லல் நேருமோ? சொல்லை வில்லாக்கி சரமாரி பெய்து சமர் வாகைச் சூடு இது சொற்போர்.\n\n</string>
+    <string name="poetry">கவி"நெய்"க(Poetry)</string>
+    <string name="poetry_desc">சொற்பருத்தி விதை தூவி, சொந்தக்\n கருத்தை யெல்லாம் உற்பத்தி செய்து,\n உன்னதக் கவியாடை நெய்வோர்\n கரம்பட்டால் நெய்யாய் மணக்கும் கவி.\n\n</string>
+    <string name="creative_writing">"புதினா" விலாசம்(Creative Writing)</string>
+    <string name="creat_writing_desc">புதினத்தின் வதனத்தைப் போற்றுவோர் எல்லாம்\n சதிராடும் சமர்க்களத்தின் விலாசம் - புதினா விலாசம்.\n\n</string>
+    <string name="cine_quiz">“பற்படம்” அறி(Cine Quiz)</string>
+    <string name="cine_quiz_desc">பற்படம் (பலப்படம்) யாவையும்\nதற்படம் போலெண்ணி நற்படம் \nதேடும் கேள்வி - விடை தேடும்\nபற்படக் கேள்வி.\n\n</string>
+    <string name="antakshari">இசைக் "கடலை"க் கட(Anthakshari)</string>
+    <string name="antakshari_desc">சிப்பியிடும் முத்தெல்லாம் முத்தல்ல இசை\nசெப்பிடும் முத்தே முத்து. \nஇசைக்கடல் கடந்து இன்முத்தெடுப்போம்.\n\n</string>
+    <string name="tamil_dumbc">"கற்கண்டு"ரை(Dumb C)</string>
+    <string name="tamil_dumbc_desc">மொழியற்று நிற்கையிலே\nவிழியுற்று நோக்கி\nகண்கண்டுரைக்கும் மொழி - இது\nகற்கண்டாயினிக்கும் மொழி.\n-மௌனமொழி.\n\n</string>
+    <string name="alaguraja">முக்”கூட்டு” - ஆல் இன் ஆல் அழகுராஜா</string>
+    <string name="alaguraja_desc">மூவரணி முறையாய் அமைந்து\nயாவர் கேள்விக்கும் விடை பகன்றால்\nவெற்றி ஒலி கேட்டு\nவிளக்குமந்தக் கூட்டு \n- முக்கூட்டு.\n\n</string>
+    <string name="comedy_show">புன்னகைப் "பூண்டு"கொள் (Comedy Show)</string>
+    <string name="comedy_show_desc">கடமாய் வயிறு குலுங்கிச் சிரிக்க\nவிகடமாய்ப் பேசுவதே தூண்டுகோல்.\n உயர் புன்னகையை முகத்தில் \nபூண்டுகொள்.\n\n</string>
+
+    <!--Telugu Lits-->
+    <string name="event1">కారాలు మిరియాలు</string>
+    <string name="event1_desc">ఒకరికి గుత్తి వంకాయ కూరంటే ఇష్టం, ఇంకొకరికి వంకాయ పులుసంటే ఇష్టం, మరొకరికి అదే వంకాయని పచ్చడిగా చేసి వేడి అన్నంలో దట్టించి తినటం ప్రాణం. ఇలా ఇంటికి తెచ్చిన కేజీ వంకాయలతో ఏం చేస్తే బాగుంటుంది అని చర్చించుకునే మనం, చెయ్యి దాటిపోతున్న నేటి సామాజిక పరిస్థితుల గురించి చర్చించుకోలేమా? ఘాటైన చర్చలకు చిరునామా ఈ కారాలు మిరియాలు\n\n</string>
+    <string name="event2">అద్భుతహా..!</string>
+    <string name="event2_desc">చేతిలో వంటల పుస్తకం పట్టుకుని ఒక్కో పదార్థం జత చేస్తూ రుచికరమైన వంటలు చేస్తే గర్వంగా ఉంటుంది. అలాగే చేతిలో చిలిపి ప్రశ్నల చిట్టా పట్టుకుని చెంగు చెంగున పరిగెడుతూ నిధి ఉన్న చోటును కనిపెడితే ఇంకా ఆనందంగా ఉంటుంది. హుషారుగా షికారు చేయటానికి స్వాగతం చెబుతుంది ఈ అద్భుతహా..!\n\n</string>
+    <string name="event3">నవరసాలు</string>
+    <string name="event3_desc">రెండు నిమిషాల్లో చేసే మ్యాగి ఆకలి తీరిస్తే, రెండు గంటల్లో చూసే సినిమా అలసట తీరుస్తుంది. నటీనటులు నవరసాలు కలబోసి నటిస్తే ఆహా అంటాం, వారి మాటలు, చేష్టలు అనుకరిస్తాం, “అదే అక్కడ నేనుంటేనా...” అని వాళ్ళ స్థానంలో మనల్ని ఊహించుకుంటాం. ఆ ఊహలు నిజం చేసే వేదిక, మీ నటనా చాతుర్యం ప్రదర్శించటానికి ఆసరా, ఈ నవరసాలు.\n\n</string>
+    <string name="event4">రచనామృతం</string>
+    <string name="event4_desc">మదిలో ఊహలు మెదులుతుంటే, కాగితంపై కలం కదులుతుంటే, ఘుమఘుమలాడే కవితల పరవాన్నం తయారవుతుంది. అటుపై ప్రాసల జీడిపప్పుతో అలంకరించిన మీ ఊసుల కవిత, అవుతుందొక చరిత!! చదివే నోటికి ఆనందం, వినే చెవులకు అమృతం, అందించటమే ఈ రచనామృతం\n\n</string>
+    <string name="event5">స్వర మాధురి</string>
+    <string name="event5_desc">రోజుకో ఆపిల్ తింటే రోగం దూరమవుతుంది , గంటకో గీతం వింటే మనసు తేలికవుతుంది..!!\nమాటలకందని భావాల్ని కూడా మధురంగా చెబుతాయి మన తేనెలొలుకు పాటలు.\nరాగం, తాళం, స్వరం, సాహిత్యం, సంగీతం... ఈ పంచామృతాలను కలిపిన పాటల పందిరే మా స్వర మాధురి.\n\n</string>
+    <string name="event6">"మెదడుకు" మేత</string>
+    <string name="event6_desc">“హాట్ సీట్ ”, “డైల్ ఏ దోస్త్”, “ఆడియన్స్ పోల్”... ఇవి ఈమధ్య కాలం లో అందరిని అలరిస్తున మాటలు. మనిషి మనుగడకు ఆహారం ఎంత అవసరమో, చుట్టూ జరిగే విషయాలపై అవగాహన కూడా అంతే అవసరం. వినోదం తో పాటుగా విజ్ఞానాన్ని జోడించి వడ్డించటమే లక్ష్యంగా మీ ముందుకు వస్తోంది ఈ మెడదుకు మేత. చూస్తూనే ఉండండి చిటికలో వచ్చేస్తాం!!!\n\n</string>
+    <string name="event7">లడ్డు కావాలా నాయన..!</string>
+    <string name="event7_desc">ఆ దేవుడు మనకిచ్చిన గొప్ప వరం నవ్వు. అందుకే, ఉపవాసం అంటూ తినకుండా కూడా రోజు గడపచ్చు అని చెప్పిన పెద్దలు, ఉపహాస్యం అంటూ నవ్వకుండా ఒక రోజును గడపమని ఎక్కడా చెప్పలేదు..!! నాటి రేలంగి నుండి నేటి సప్తగిరి వరకు, నాటి జంధ్యాల నుండి నేటి త్రివిక్రమ్ వరకు అందరు చెప్పేది ఒక్కటే, నవ్వు..నవ్వించు..!! సరదా సరదాగా నవ్వులు పంచె కార్యక్రమం ఈ లడ్డు కావాలా నాయన..!\n\n</string>
+    <string name="event8">షడ్రుచి</string>
+    <string name="event8_desc">దోరగా వేగిన కూరగాయల్లో పడుచు పిల్ల ఓరగా చూసే చూపులా కారం, రుచి చుసిన ఘనుడు కోరగా వేసిన పులుపు, అన్నింటిని మించి నేరుగా వేసిన ఉప్పు, సమపాలంలో కుదిరితేనే ఓ మంచి వంటకం!!\nఅలాగే, మనసుపడి రాసుకున్న కథ, ఇష్టపడి రాసుకున్న కథనం, తపనపడి రాసుకున్న సంభాషణలు, అన్నింటిని మించి విరగబడి చేసే అభినయం, ముచ్చటగా కుదిరితేనే ఓ మంచి నాటకం!!\nమీ అభిరుచిని వేదికపై ఆవిష్కరించేందుకే ఈ షడ్రుచి.\n\n</string>
+
+    <!--KS Uphaar-->
+    <string name="uphaar">KS Uphaar</string>
+    <string name="uphaar_desc">KS Upahaar is a SASTRA student organization which strives to improve the quality of education in the nearby schools. Upahaar was initiated in the year 2011 by a group of enthusiastic students with a view to ensure accessibility of education for children. Funds are collected through drop boxes placed at various locations throughout the institution and formal events are conducted during Kuruksastra, sponsored by Canopy, a student-run organization. The money collected during the period 2011-14 was used to provide several basic amenities to schools in Tirumalaisamudram, Chellapanpetti, Vallam Pudur and Nattani.</string>
+
+    <!--Contacts-->
+    <string name="contact">Contacts</string>
+    <string name="contact_logo">&#xf095;</string>
+</resources>

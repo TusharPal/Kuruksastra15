@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_grey">
+
+    <LinearLayout
+        android:id="@+id/uphaar_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/yellow"
+            android:text="@string/uphaar"
+            android:paddingTop="35dp"
+            android:paddingBottom="15dp"
+            android:layout_gravity="center_horizontal"
+            android:textStyle="bold"
+            android:textSize="30sp"
+            />
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/divider_uphaar"
+            android:layout_below="@+id/uphaar_header"
+            android:layout_width="300dp"
+            android:layout_height="0.5dp"
+            android:background="@color/divider_grey"
+            android:layout_centerHorizontal="true"
+            />
+
+        <TextView
+            android:id="@+id/uphaar_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/uphaar_desc"
+            android:layout_below="@+id/divider_uphaar"
+            android:textColor="#ffffff"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:textSize="18sp"
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/uphaar_desc"
+            android:contentDescription="@string/common_content_desc"
+            />
+
+</RelativeLayout>
