@@ -162,12 +162,13 @@
     <string-array name="icons">
         <item>&#xf05a;</item>
         <item>&#xf073;</item>
-        <item>&#xf0a1;</item>
         <item>&#xf001;</item>
         <item>&#xf1ae;</item>
         <item>&#xf005;</item>
         <item>&#xf095;</item>
     </string-array>
+
+    <string name="ann_icon">&#xf0a1;</string>
 
 
 </resources>
