@@ -1,6 +1,7 @@
 package com.a1kesamose.kuruksastra15.adapter;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,11 +13,12 @@ import com.a1kesamose.kuruksastra15.R;
 public class NavigationDrawerListAdapter extends BaseAdapter
 {
     private Context context;
-    private String icons[] = {"+", "+", "+", "+", "+", "+"};
-    private String items[] = {"About KS", "Events", "Pro Shows", "KS Upahaar", "Sponsors", "Contacts"};;
+    private String icons[];
+    private String items[] = {"About KS", "Events", "Announcements","Pro Shows", "KS Upahaar", "Sponsors", "Contacts"};
     private LayoutInflater inflater;
     private int itemSelectedPosition;
 
+    Typeface fontAwesomeTypeface;
     private TextView textViewIcon;
     private TextView textViewItem;
 
@@ -24,7 +26,7 @@ public class NavigationDrawerListAdapter extends BaseAdapter
     {
         this.context = context;
         this.itemSelectedPosition = itemSelectedPosition;
-
+        icons = context.getResources().getStringArray(R.array.icons);
         inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
@@ -52,6 +54,9 @@ public class NavigationDrawerListAdapter extends BaseAdapter
         view = inflater.inflate(R.layout.list_item_navigation_drawer, viewGroup, false);
         textViewIcon = (TextView)view.findViewById(R.id.textView_icon_list_item_navigation_drawer);
         textViewItem = (TextView)view.findViewById(R.id.textView_item_list_item_navigation_drawer);
+
+        fontAwesomeTypeface = Typeface.createFromAsset(context.getAssets(),"fonts/fontawesome-webfont.ttf");
+        textViewIcon.setTypeface(fontAwesomeTypeface);
 
         textViewIcon.setText(icons[position]);
         textViewItem.setText(items[position]);
