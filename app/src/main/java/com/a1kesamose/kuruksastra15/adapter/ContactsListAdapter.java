@@ -8,9 +8,6 @@ import android.widget.BaseAdapter;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.a1kesamose.kuruksastra15.R;
-import com.a1kesamose.kuruksastra15.holder.ViewHolder;
-import java.util.ArrayList;
-import java.util.TreeSet;
 
 /**
  * Created by Achyuth on 11-Mar-15.
