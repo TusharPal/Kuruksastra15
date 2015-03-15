@@ -165,6 +165,21 @@
     <string name="save">&#xf0c7;</string>
 
     <string-array name="icons">
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+        <item>&#xf05a;</item>
+        <item>&#xf073;</item>
+        <item>&#xf001;</item>
+        <item>&#xf1ae;</item>
+        <item>&#xf005;</item>
+        <item>&#xf095;</item>
+        <item>&#xf095;</item>
+    </string-array>
+
+    <string name="ann_icon">&#xf0a1;</string>
+=======
+>>>>>>> Stashed changes
         <item>&#xf05a;</item> <!--About KS-->
         <item>&#xf073;</item> <!--Events-->
         <item>&#xf001;</item> <!--pro shows-->
@@ -185,4 +200,5 @@
 
 
 
+>>>>>>> origin/master
 </resources>

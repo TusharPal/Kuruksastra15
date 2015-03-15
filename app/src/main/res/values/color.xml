@@ -4,4 +4,13 @@
     <color name="divider_grey">#cacaca</color>
     <color name="background_dark_grey">#262523</color>
     <color name="background_light_grey">#545454</color>
+    <color name="arts">#ffc107</color>
+    <color name="dance">#03a9f4</color>
+    <color name="dramatics">#9c27b0</color>
+    <color name="english_lits">#8bc34a</color>
+    <color name="fotohub">#f44336</color>
+    <color name="hindi_lits">#d81b60</color>
+    <color name="music">#ffeb3b</color>
+    <color name="tamil_lits">#3f51b5</color>
+    <color name="telegu_lits">#9E9E9E</color>
 </resources>

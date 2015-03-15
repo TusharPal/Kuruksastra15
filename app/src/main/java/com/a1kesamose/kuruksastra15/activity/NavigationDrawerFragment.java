@@ -32,8 +32,8 @@ public class NavigationDrawerFragment extends Fragment
     private int mCurrentSelectedPosition = 0;
     private boolean mFromSavedInstanceState;
     private boolean mUserLearnedDrawer;
-    private String navigationDrawerItemTitles[] = {"About KS", "Events", "Pro Shows", "KS Upahaar", "Sponsors", "Contacts"};
     private NavigationDrawerListAdapter navigationDrawerListAdapter;
+
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerListView;
     private View mFragmentContainerView;

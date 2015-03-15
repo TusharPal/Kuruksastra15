@@ -1,6 +1,5 @@
 package com.a1kesamose.kuruksastra15.activity;
 
-import android.app.Fragment;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
@@ -16,7 +15,7 @@ public class ActivityMain extends ActionBarActivity implements NavigationDrawerF
 {
     private NavigationDrawerFragment mNavigationDrawerFragment;
     private CharSequence mTitle;
-    private String navigationDrawerItemTitles[] = {"About KS", "Events", "Pro Shows", "KS Upahaar", "Sponsors", "Contacts"};
+    private String navigationDrawerItemTitles[] = {"About KS", "Events", "Pro Shows", "KS Upahaar", "Sponsors", "Contacts", "Schedule"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -69,6 +68,13 @@ public class ActivityMain extends ActionBarActivity implements NavigationDrawerF
             case 5:
             {
                 fragmentManager.beginTransaction().replace(R.id.container, FragmentContacts.newInstance(position)).commit();
+
+                break;
+            }
+            case 6:
+            {
+                fragmentManager.beginTransaction().replace(R.id.container, FragmentSchedule.newInstance(this, position)).commit();
+
                 break;
             }
         }

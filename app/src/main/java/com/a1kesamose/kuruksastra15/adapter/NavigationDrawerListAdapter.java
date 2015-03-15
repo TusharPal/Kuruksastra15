@@ -14,7 +14,7 @@ public class NavigationDrawerListAdapter extends BaseAdapter
 {
     private Context context;
     private String icons[];
-    private String items[] = {"About KS", "Events", "Pro Shows", "KS Upahaar", "Sponsors", "Contacts"};
+    private String items[] = {"About KS", "Events", "Pro Shows", "KS Upahaar", "Sponsors", "Contacts", "Schedule"};
     private LayoutInflater inflater;
     private int itemSelectedPosition;
 
