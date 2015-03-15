@@ -73,7 +73,25 @@ public class ActivityMain extends ActionBarActivity implements NavigationDrawerF
             }
             case 6:
             {
-                fragmentManager.beginTransaction().replace(R.id.container, FragmentSchedule.newInstance(this, position)).commit();
+                fragmentManager.beginTransaction().replace(R.id.container, FragmentSchedule.newInstance(position)).commit();
+
+                break;
+            }
+            case 7:
+            {
+                fragmentManager.beginTransaction().replace(R.id.container, FragmentSchedule.newInstance(position)).commit();
+
+                break;
+            }
+            case 8:
+            {
+                fragmentManager.beginTransaction().replace(R.id.container, FragmentSchedule.newInstance(position)).commit();
+
+                break;
+            }
+            case 9:
+            {
+                fragmentManager.beginTransaction().replace(R.id.container, FragmentSchedule.newInstance(position)).commit();
 
                 break;
             }

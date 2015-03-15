@@ -1,19 +1,23 @@
 package com.a1kesamose.kuruksastra15.activity;
 
-import android.content.Context;
+import android.app.Dialog;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.widget.Button;
 
 import com.a1kesamose.kuruksastra15.R;
 
-public class FragmentSchedule extends Fragment
+public class FragmentSchedule extends Fragment implements View.OnClickListener
 {
     private static final String NAVIGATION_DRAWER_POSITION = "navigation_drawer_position";
 
-    public static FragmentSchedule newInstance(Context c, int navigationDrawerPosition)
+    private Button button;
+
+    public static FragmentSchedule newInstance(int navigationDrawerPosition)
     {
         Bundle args = new Bundle();
         args.putInt(NAVIGATION_DRAWER_POSITION, navigationDrawerPosition);
@@ -27,6 +31,58 @@ public class FragmentSchedule extends Fragment
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
-        return inflater.inflate(R.layout.fragment_schedule, container, false);
+        View rootView;
+
+        switch(getArguments().getInt(NAVIGATION_DRAWER_POSITION))
+        {
+            case 6:
+            {
+                rootView = inflater.inflate(R.layout.fragment_schedule_day_one, container, false);
+                button = (Button)rootView.findViewById(R.id.button_legend_fragment_schedule_day_one);
+                button.setOnClickListener(this);
+
+                return rootView;
+            }
+            case 7:
+            {
+                rootView = inflater.inflate(R.layout.fragment_schedule_day_one, container, false);
+                button = (Button)rootView.findViewById(R.id.button_legend_fragment_schedule_day_one);
+                button.setOnClickListener(this);
+
+                return rootView;
+            }
+            case 8:
+            {
+                rootView = inflater.inflate(R.layout.fragment_schedule_day_two, container, false);
+                button = (Button)rootView.findViewById(R.id.button_legend_fragment_schedule_day_two);
+                button.setOnClickListener(this);
+
+                return rootView;
+            }
+            case 9:
+            {
+                rootView = inflater.inflate(R.layout.fragment_schedule_day_three, container, false);
+                button = (Button)rootView.findViewById(R.id.button_legend_fragment_schedule_day_three);
+                button.setOnClickListener(this);
+
+                return rootView;
+            }
+        }
+
+        return inflater.inflate(R.layout.fragment_schedule_day_one, container, false);
+    }
+
+    @Override
+    public void onClick(View view)
+    {
+        createDialogLegend();
+    }
+
+    public void createDialogLegend()
+    {
+        final Dialog dialog = new Dialog(getActivity());
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.dialog_legend);
+        dialog.show();
     }
 }
