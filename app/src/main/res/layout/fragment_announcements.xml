@@ -1,6 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_dark_grey"
+    >
+
+    <LinearLayout
+        android:id="@+id/announcement_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        >
+
+        <TextView
+            android:id="@+id/announcement_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/yellow"
+            android:text="@string/announcements_icon"
+            android:textSize="30sp"
+            android:padding="10dp"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/yellow"
+            android:padding="5dp"
+            />
+        </LinearLayout>
+
+    <ListView
+        android:id="@+id/announcement_list"
+        android:layout_below="@+id/announcement_header"
+        android:padding="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@color/button_material_dark"
+        android:dividerHeight="0.2dp"
+        >
+        </ListView>
 
 </RelativeLayout>
