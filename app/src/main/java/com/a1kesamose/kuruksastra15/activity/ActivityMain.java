@@ -15,7 +15,7 @@ public class ActivityMain extends ActionBarActivity implements NavigationDrawerF
 {
     private NavigationDrawerFragment mNavigationDrawerFragment;
     private CharSequence mTitle;
-    private String navigationDrawerItemTitles[] = {"About KS", "Events", "Announcements", "KS Upahaar", "Sponsors", "Contacts", "Schedule"};
+    private String navigationDrawerItemTitles[] = {"About KS", "Events", "Announcements", "KS Upahaar", "Sponsors", "Contacts", "Schedule", "Schedule", "Schedule", "Schedule"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
