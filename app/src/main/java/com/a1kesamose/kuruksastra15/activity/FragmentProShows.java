@@ -27,7 +27,7 @@ public class FragmentProShows extends Fragment
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
-        View rootView = inflater.inflate(R.layout.fragment_pro_shows, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_announcements, container, false);
 
         return rootView;
     }
