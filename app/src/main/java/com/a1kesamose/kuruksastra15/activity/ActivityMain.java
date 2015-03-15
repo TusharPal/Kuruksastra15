@@ -1,5 +1,6 @@
 package com.a1kesamose.kuruksastra15.activity;
 
+import android.app.Fragment;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
@@ -68,7 +69,6 @@ public class ActivityMain extends ActionBarActivity implements NavigationDrawerF
             case 5:
             {
                 fragmentManager.beginTransaction().replace(R.id.container, FragmentContacts.newInstance(position)).commit();
-
                 break;
             }
         }

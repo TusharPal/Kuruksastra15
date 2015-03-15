@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background="@color/background_light_grey"
+    >
+
+    <TableRow
+        android:gravity="center"
+        >
+        <ImageView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:src="@drawable/ks_icon"
+            android:paddingBottom="9dp"
+            android:contentDescription="@string/common_content_desc"
+            />
+    </TableRow>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:paddingTop="8dp"
+            android:background="@color/yellow"
+            />
+
+
+    <TableRow
+        android:gravity="center"
+        android:padding="12dp"
+        >
+        <TextView
+            android:id="@+id/call_icon"
+            android:layout_gravity="center"
+            android:padding="8dp"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:textSize="30sp"
+            android:text="@string/call"
+            android:textColor="@color/yellow"
+            />
+
+        <TextView
+            android:id="@+id/sms_icon"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="@string/sms"
+            android:padding="8dp"
+            android:textSize="30sp"
+            android:textColor="@color/yellow"
+            />
+        <TextView
+            android:id="@+id/save_icon"
+            android:layout_gravity="center"
+            android:padding="8dp"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="@string/save"
+            android:textSize="30sp"
+            android:textColor="@color/yellow"
+            />
+    </TableRow>
+
+</TableLayout>

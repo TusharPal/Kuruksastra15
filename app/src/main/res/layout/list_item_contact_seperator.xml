@@ -8,7 +8,7 @@
     >
 
     <TextView
-        android:id="@+id/contact_category"
+        android:id="@+id/contact_section"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="18sp"

@@ -158,17 +158,31 @@
 
     <!--Font Awesome icons-->
     <string name="contact_logo">&#xf095;</string>
+    <string name="uphaar_icon">&#xf1ae;</string>
+    <string name="schedule_icon">&#xf017;</string>
+    <string name="call">&#xf10b;</string>
+    <string name="sms">&#xf003;</string>
+    <string name="save">&#xf0c7;</string>
 
     <string-array name="icons">
-        <item>&#xf05a;</item>
-        <item>&#xf073;</item>
-        <item>&#xf001;</item>
-        <item>&#xf1ae;</item>
-        <item>&#xf005;</item>
-        <item>&#xf095;</item>
+        <item>&#xf05a;</item> <!--About KS-->
+        <item>&#xf073;</item> <!--Events-->
+        <item>&#xf001;</item> <!--pro shows-->
+        <item>&#xf1ae;</item> <!--uphaar-->
+        <item>&#xf005;</item> <!--sponsors-->
+        <item>&#xf095;</item> <!--contacts-->
     </string-array>
 
     <string name="ann_icon">&#xf0a1;</string>
+    
+    <!--Sponsors-->
+    <string name="title">Title Sponsor</string>
+    <string name="associate">Associate Sponsor</string>
+    <string name="apparel">Apparel Sponsor</string>
+    <string name="event">Event Sponsor</string>
+    <string name="business">Business Sponsor</string>
+    <string name="online_media">Online Media Partner</string>
+
 
 
 </resources>
