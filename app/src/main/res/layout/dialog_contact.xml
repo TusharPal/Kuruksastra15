@@ -3,64 +3,53 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
+    android:stretchColumns="1"
     android:background="@color/background_light_grey"
     >
 
-    <TableRow
-        android:gravity="center"
-        >
-        <ImageView
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:src="@drawable/ks_icon"
-            android:paddingBottom="9dp"
-            android:contentDescription="@string/common_content_desc"
-            />
+    <TableRow>
+
+        <LinearLayout
+            android:id="@+id/call_layout"
+            android:layout_width="0dip"
+            android:layout_height="150dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="@drawable/selector_contact_method"
+            >
+
+            <TextView
+                android:id="@+id/call_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/call"
+                android:textSize="50sp"
+                android:padding="30dp"
+                android:textColor="@color/yellow"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/sms_layout"
+            android:layout_width="0dip"
+            android:layout_height="150dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="@drawable/selector_contact_method"
+            >
+
+            <TextView
+                android:id="@+id/sms_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sms"
+                android:textSize="45sp"
+                android:padding="30dp"
+                android:textColor="@color/yellow"
+                />
+        </LinearLayout>
+
     </TableRow>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:paddingTop="8dp"
-            android:background="@color/yellow"
-            />
-
-
-    <TableRow
-        android:gravity="center"
-        android:padding="12dp"
-        >
-        <TextView
-            android:id="@+id/call_icon"
-            android:layout_gravity="center"
-            android:padding="8dp"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:textSize="30sp"
-            android:text="@string/call"
-            android:textColor="@color/yellow"
-            />
-
-        <TextView
-            android:id="@+id/sms_icon"
-            android:layout_gravity="center"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:text="@string/sms"
-            android:padding="8dp"
-            android:textSize="30sp"
-            android:textColor="@color/yellow"
-            />
-        <TextView
-            android:id="@+id/save_icon"
-            android:layout_gravity="center"
-            android:padding="8dp"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:text="@string/save"
-            android:textSize="30sp"
-            android:textColor="@color/yellow"
-            />
-    </TableRow>
 
 </TableLayout>

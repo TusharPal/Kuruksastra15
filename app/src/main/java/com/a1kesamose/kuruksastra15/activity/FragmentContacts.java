@@ -1,6 +1,9 @@
 package com.a1kesamose.kuruksastra15.activity;
 
 import android.app.Activity;
+import android.app.Dialog;
+import android.content.Intent;
+import android.net.Uri;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ListFragment;
 import android.graphics.Typeface;
@@ -9,6 +12,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -19,16 +24,20 @@ import com.a1kesamose.kuruksastra15.itemInterface.ListItem;
 import com.a1kesamose.kuruksastra15.listItemClasses.ContactDetails;
 import com.a1kesamose.kuruksastra15.listItemClasses.ContactHeader;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 
-public class FragmentContacts extends Fragment
+public class FragmentContacts extends Fragment implements AdapterView.OnItemClickListener
 {
     private static final String NAVIGATION_DRAWER_POSITION = "navigation_drawer_position";
     TextView contactLogoTextView;
     Typeface fontAwesomeTypeface;
     ContactsListAdapter listAdapter;
     ListView contactsListView;
-    ArrayList<ListItem> listItems = new ArrayList<ListItem>();;
+    ArrayList<ListItem> listItems = new ArrayList<ListItem>();
+
+
 
     public static FragmentContacts newInstance(int navigationDrawerPosition)
     {
@@ -126,6 +135,46 @@ public class FragmentContacts extends Fragment
 
         listAdapter = new ContactsListAdapter(getActivity(), listItems);
         contactsListView.setAdapter(listAdapter);
+        contactsListView.setOnItemClickListener(this);
+
         return contactView;
     }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View v, int position, long id)
+    {
+        final Dialog dialog = new Dialog(getActivity());
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.dialog_contact);
+        LinearLayout callLayout = (LinearLayout)dialog.findViewById(R.id.call_layout);
+        LinearLayout smsLayout = (LinearLayout)dialog.findViewById(R.id.sms_layout);
+
+        final TextView contactNumber = (TextView)v.findViewById(R.id.contact_number);
+
+        callLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:"+contactNumber.getText().toString()));
+                getActivity().startActivity(intent);
+            }
+        });
+
+        smsLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("sms:"+contactNumber.getText().toString()));
+                getActivity().startActivity(intent);
+            }
+        });
+
+        Typeface typeface = Typeface.createFromAsset(getActivity().getAssets(), "fonts/fontawesome-webfont.ttf");
+        TextView callIcon = (TextView)dialog.findViewById(R.id.call_icon);
+        TextView smsIcon = (TextView)dialog.findViewById(R.id.sms_icon);
+        callIcon.setTypeface(typeface);
+        smsIcon.setTypeface(typeface);
+        dialog.show();
+    }
+
 }

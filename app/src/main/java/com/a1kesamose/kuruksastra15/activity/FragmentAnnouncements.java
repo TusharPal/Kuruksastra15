@@ -37,9 +37,6 @@ public class FragmentAnnouncements extends Fragment
         fontawesomeTypeface = Typeface.createFromAsset(getActivity().getAssets(),"fonts/fontawesome-webfont.ttf");
         announcementIcon = (TextView)rootView.findViewById(R.id.announcement_icon);
         announcementIcon.setTypeface(fontawesomeTypeface);
-
-
-
         return rootView;
     }
 }

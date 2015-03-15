@@ -1,15 +1,20 @@
 package com.a1kesamose.kuruksastra15.adapter;
 
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Typeface;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.a1kesamose.kuruksastra15.R;
+import com.a1kesamose.kuruksastra15.activity.FragmentContacts;
 import com.a1kesamose.kuruksastra15.itemInterface.ListItem;
 import com.a1kesamose.kuruksastra15.listItemClasses.ContactDetails;
 import com.a1kesamose.kuruksastra15.listItemClasses.ContactHeader;
@@ -23,8 +28,8 @@ public class ContactsListAdapter extends ArrayAdapter<ListItem>
     Context context;
     ArrayList<ListItem> contactItems;
     private LayoutInflater layoutInflater;
-    TextView callIcon, smsIcon, saveIcon;
-
+    TextView callIcon, smsIcon;
+    TextView contactName, contactNumber;
 
 
     public ContactsListAdapter(Context context, ArrayList<ListItem> contactItems)
@@ -58,8 +63,8 @@ public class ContactsListAdapter extends ArrayAdapter<ListItem>
                 final ContactDetails contactDetails = (ContactDetails)item;
                 contactView = layoutInflater.inflate(R.layout.list_item_contact, null);
                 LinearLayout contactsLayout = (LinearLayout)contactView.findViewById(R.id.contact_details);
-                TextView contactName = (TextView)contactView.findViewById(R.id.contact_name);
-                TextView contactNumber = (TextView)contactView.findViewById(R.id.contact_number);
+                contactName = (TextView)contactView.findViewById(R.id.contact_name);
+                contactNumber = (TextView)contactView.findViewById(R.id.contact_number);
                 if(contactName!=null)
                 {
                     contactName.setText(contactDetails.name);
@@ -69,28 +74,6 @@ public class ContactsListAdapter extends ArrayAdapter<ListItem>
                 {
                     contactNumber.setText(contactDetails.phoneNumber);
                 }
-
-                contactsLayout.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-//                        AlertDialog.Builder callDialogBuilder = new AlertDialog.Builder(getContext());
-//                        LayoutInflater inflater = LayoutInflater.from(context);
-//                        View view = inflater.inflate(R.layout.dialog_contact, null);
-//                        callDialogBuilder.setView(view);
-//                        AlertDialog contactDialog = callDialogBuilder.create();
-//                        callIcon = (TextView)contactDialog.findViewById(R.id.call_icon);
-//                        smsIcon = (TextView)contactDialog.findViewById(R.id.sms_icon);
-//                        saveIcon = (TextView)contactDialog.findViewById(R.id.save_icon);
-//
-//                        Typeface fontAwesomeTypeface = Typeface.createFromAsset(contactDialog.getContext().getAssets(),"fonts/fontawesome-webfont.ttf");
-//
-//                        callIcon.setTypeface(fontAwesomeTypeface);
-//                        smsIcon.setTypeface(fontAwesomeTypeface);
-//                        saveIcon.setTypeface(fontAwesomeTypeface);
-//                        contactDialog.show();
-
-                    }
-                });
             }
         }
         return contactView;
