@@ -8,7 +8,20 @@
     <string name="app_name">Kuruksastra\'15</string>
     <string name="action_settings">Settings</string>
     <string name="common_content_desc">Image</string>
-    
+
+    <string name="media">Media</string>
+    <string name="thespian">Thespian</string>
+    <string name="eng_lits">English Lits</string>
+    <string name="tam_lits">Tamil Lits</string>
+    <string name="hindi_lits">Hindi Lits</string>
+    <string name="telugu_lits">Telugu Lits</string>
+    <string name="east_dance">Eastern Dance</string>
+    <string name="west_dance">Western Dance</string>
+    <string name="music">Music</string>
+    <string name="arts">Fine Arts</string>
+    <string name="general">General Updates</string>
+
+    <string name="fav_cluster">Choose the clusters for which you wish to receive notifications</string>
 
     <!--Home-->
     <string name="kuruksastra_description">SASTRA University and Aircel serve you the latest edition of KURUKSASTRA ‘15, a National level cultural fest – and this time it’s spicier and tastier! Come and indulge your senses in the most sumptuous buffet of events spanning 3 days and tease your taste buds by savoring the mouthwatering delicacies offered by each of our clusters. With a myriad of creative and euphoric events, showcase your expertise in this cultural extravaganza and prove your mettle by donning different chef hats and smoking the stage! Ignite the passion and vigor in your stomach and soup up as it is going to be LEGEN-wait for it- DARY, this spring! Good Luck and Bon Appetit!</string>
@@ -163,8 +176,9 @@
     <string name="call">&#xf10b;</string>
     <string name="sms">&#xf003;</string>
     <string name="save">&#xf0c7;</string>
-
+    <string name="settings">&#xf013;</string>
     <string name="announcements_icon">&#xf0a1;</string>
+    <string name="check">&#xf00c;</string>
 
     <string-array name="icons">
         <item>&#xf05a;</item>   <!--About KS-->
@@ -177,6 +191,7 @@
         <item></item>           <!--Schedule day one-->
         <item></item>           <!--Schedule day two-->
         <item></item>           <!--Schedule day three-->
+        <item>&#xf013;</item>   <!--Settings-->
     </string-array>
     
     <!--Sponsors-->
@@ -186,4 +201,5 @@
     <string name="event">Event Sponsor</string>
     <string name="business">Business Sponsor</string>
     <string name="online_media">Online Media Partner</string>
+
 </resources>

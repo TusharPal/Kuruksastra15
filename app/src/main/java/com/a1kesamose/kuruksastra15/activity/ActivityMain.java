@@ -38,11 +38,11 @@ public class ActivityMain extends ActionBarActivity implements NavigationDrawerF
     private NavigationDrawerFragment mNavigationDrawerFragment;
 
     private CharSequence mTitle;
-    private String navigationDrawerItemTitles[] = {"About KS", "Events", "Announcements", "KS Upahaar", "Sponsors", "Contacts", "Schedule", "Schedule", "Schedule", "Schedule"};
     private Calendar calendar;
     private SharedPreferences sharedPreferences;
     public AnnouncementsDatabaseSource databaseSource;
     public HttpCountRequestTask httpCountRequestTask;
+    private String navigationDrawerItemTitles[] = {"About KS", "Events", "Announcements", "KS Upahaar", "Sponsors", "Contacts", "Schedule", "Schedule", "Schedule", "Schedule","Settings"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -141,6 +141,11 @@ public class ActivityMain extends ActionBarActivity implements NavigationDrawerF
                 fragmentManager.beginTransaction().replace(R.id.container, FragmentSchedule.newInstance(position)).commit();
 
                 break;
+            }
+
+            case 10:
+            {
+                fragmentManager.beginTransaction().replace(R.id.container, FragmentSettings.newInstance(position)).commit();
             }
         }
     }
