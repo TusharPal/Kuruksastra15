@@ -5,9 +5,11 @@ import android.app.NotificationManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
+import android.preference.PreferenceManager;
 import android.support.v4.app.NotificationCompat;
 
 import com.a1kesamose.kuruksastra15.Database.AnnouncementsDatabaseSource;
@@ -125,6 +127,7 @@ public class AnnouncementBroadcastReceiver extends BroadcastReceiver
         class HttpAnnouncementRequest extends AsyncTask<String, Void, String>
         {
             JSONArray announcementsJsonArray;
+            public SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
 
             @Override
             protected String doInBackground(String... url)
@@ -149,6 +152,7 @@ public class AnnouncementBroadcastReceiver extends BroadcastReceiver
             @Override
             protected void onPostExecute(String result)
             {
+
                 try
                 {
                     JSONObject mainObject = new JSONObject(result);
@@ -160,7 +164,11 @@ public class AnnouncementBroadcastReceiver extends BroadcastReceiver
 
                         Announcement announcement = new Announcement(arrayJSONObject.getString("cluster"), arrayJSONObject.getString("announcement"), arrayJSONObject.getString("time"));
                         databaseSource.insertAnnouncement(announcement);
-                        createNotification(announcement, i);
+                        boolean announcementPreference = preferences.getBoolean(announcement.ANNOUNCEMENT_CLUSTER,false);
+                        if(!announcementPreference)
+                        {
+                            createNotification(announcement, i);
+                        }
                     }
 
                     databaseSource.close();
