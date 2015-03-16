@@ -145,7 +145,7 @@ public class AnnouncementBroadcastReceiver extends BroadcastReceiver
                 {
                     e.printStackTrace();
                 }
-
+                httpClient.getConnectionManager().shutdown();
                 return result;
             }
 
@@ -165,7 +165,7 @@ public class AnnouncementBroadcastReceiver extends BroadcastReceiver
                         Announcement announcement = new Announcement(arrayJSONObject.getString("cluster"), arrayJSONObject.getString("announcement"), arrayJSONObject.getString("time"));
                         databaseSource.insertAnnouncement(announcement);
                         boolean announcementPreference = preferences.getBoolean(announcement.ANNOUNCEMENT_CLUSTER,false);
-                        if(!announcementPreference)
+                        if(announcementPreference)
                         {
                             createNotification(announcement, i);
                         }
