@@ -13,4 +13,5 @@
     <color name="music">#ffeb3b</color>
     <color name="tamil_lits">#3f51b5</color>
     <color name="telegu_lits">#9E9E9E</color>
+    <color name="nav_drawer_background">#ffb367</color>
 </resources>
