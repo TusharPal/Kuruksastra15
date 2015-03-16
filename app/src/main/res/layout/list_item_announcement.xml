@@ -4,39 +4,32 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/background_dark_grey"
-    >
+    android:background="@color/background_dark_grey">
 
     <TextView
-        android:id="@+id/announcement_cluster"
+        android:id="@+id/textView_cluster_list_item_announcement"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="Cluster"
         android:textSize="20sp"
-        android:textColor="@color/yellow"
-        android:padding="10dp"
-        />
+        android:textColor="@color/yellow"/>
 
     <TextView
-        android:id="@+id/announcement_message"
+        android:id="@+id/textView_announcement_list_item_announcement"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="Announcement"
         android:textSize="15sp"
-        android:textColor="#ffffff"
-        android:paddingTop="5dp"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:paddingBottom="15dp"
-        />
+        android:textColor="@android:color/white"/>
 
     <TextView
-        android:id="@+id/announcement_time"
+        android:id="@+id/textView_time_list_item_announcement"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="Time"
         android:textSize="15sp"
-        android:textColor="@color/background_light_grey"
-        android:paddingLeft="10dp"
-        android:paddingBottom="10dp"
-        android:paddingRight="10dp"
-        />
-
+        android:textColor="@android:color/white"/>
 </LinearLayout>

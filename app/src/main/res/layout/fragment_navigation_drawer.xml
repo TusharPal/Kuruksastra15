@@ -7,9 +7,9 @@
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="120dp"
         android:src="@drawable/ks_icon"
-        android:background="@color/background_dark_grey"/>
+        android:background="@color/yellow"/>
 
     <ListView
         android:id="@+id/listView_fragment_navigation_drawer"

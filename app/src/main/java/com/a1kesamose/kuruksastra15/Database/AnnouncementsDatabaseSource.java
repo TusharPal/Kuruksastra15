@@ -65,6 +65,20 @@ public class AnnouncementsDatabaseSource
         }
     }
 
+    public int getCount()
+    {
+        Cursor cursor = database.query(AnnouncementsDatabaseHelper.TABLE_NAME, allColumns, null, null, null, null, AnnouncementsDatabaseHelper.COLUMN_TIME + " DESC", null);
+
+        if(cursor.moveToFirst())
+        {
+            return cursor.getCount();
+        }
+        else
+        {
+            return 0;
+        }
+    }
+
     public Announcement cursorToAnnouncement(Cursor cursor)
     {
         Announcement announcement = new Announcement();

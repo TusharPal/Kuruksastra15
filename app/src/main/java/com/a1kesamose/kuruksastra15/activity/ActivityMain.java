@@ -1,21 +1,48 @@
 package com.a1kesamose.kuruksastra15.activity;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.a1kesamose.kuruksastra15.Database.AnnouncementsDatabaseSource;
+import com.a1kesamose.kuruksastra15.Objects.Announcement;
 import com.a1kesamose.kuruksastra15.R;
+import com.a1kesamose.kuruksastra15.Receiver.AnnouncementBroadcastReceiver;
+
+import org.apache.http.client.ResponseHandler;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.BasicResponseHandler;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.util.Calendar;
 
 
 public class ActivityMain extends ActionBarActivity implements NavigationDrawerFragment.NavigationDrawerCallbacks
 {
     private NavigationDrawerFragment mNavigationDrawerFragment;
+
     private CharSequence mTitle;
     private String navigationDrawerItemTitles[] = {"About KS", "Events", "Announcements", "KS Upahaar", "Sponsors", "Contacts", "Schedule", "Schedule", "Schedule", "Schedule"};
+    private Calendar calendar;
+    private SharedPreferences sharedPreferences;
+    public AnnouncementsDatabaseSource databaseSource;
+    public HttpCountRequestTask httpCountRequestTask;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -26,6 +53,26 @@ public class ActivityMain extends ActionBarActivity implements NavigationDrawerF
         mNavigationDrawerFragment = (NavigationDrawerFragment)getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
         mNavigationDrawerFragment.setUp(R.id.navigation_drawer,(DrawerLayout) findViewById(R.id.drawer_layout));
         mTitle = getTitle();
+        databaseSource = new AnnouncementsDatabaseSource(this);
+        databaseSource.open();
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        httpCountRequestTask = new HttpCountRequestTask();
+
+        if(!sharedPreferences.getBoolean("first_launch", false))
+        {
+            calendar = Calendar.getInstance();
+            Intent notificationFetchIntent = new Intent(this, AnnouncementBroadcastReceiver.class);
+            PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(),1010 , notificationFetchIntent,PendingIntent.FLAG_UPDATE_CURRENT);
+            AlarmManager alarmManager = (AlarmManager)this.getSystemService(Context.ALARM_SERVICE);
+            alarmManager.setRepeating(AlarmManager.RTC, calendar.getTimeInMillis(), AlarmManager.INTERVAL_FIFTEEN_MINUTES, pendingIntent);
+
+            sharedPreferences.edit().putBoolean("first_launch", true).apply();
+        }
+
+        if(isNetworkAvailable())
+        {
+            httpCountRequestTask.execute("http://ksupdates.herokuapp.com/api/count");
+        }
     }
 
     @Override
@@ -49,7 +96,7 @@ public class ActivityMain extends ActionBarActivity implements NavigationDrawerF
             }
             case 2:
             {
-                fragmentManager.beginTransaction().replace(R.id.container, FragmentProShows.newInstance(position)).commit();
+                fragmentManager.beginTransaction().replace(R.id.container, FragmentAnnouncements.newInstance(position)).commit();
 
                 break;
             }
@@ -138,5 +185,131 @@ public class ActivityMain extends ActionBarActivity implements NavigationDrawerF
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public boolean isNetworkAvailable()
+    {
+        ConnectivityManager manager = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = manager.getActiveNetworkInfo();
+
+        if(networkInfo!=null)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    private class HttpCountRequestTask extends AsyncTask<String, Void, String>
+    {
+        int announcementCount = 0;
+        String URL_ANNOUNCEMENT = "http://ksupdates.herokuapp.com/api/announcements/";
+        HttpAnnouncementRequestTask httpAnnouncementRequest = new HttpAnnouncementRequestTask();
+
+        @Override
+        protected String doInBackground(String... url)
+        {
+            String result = "";
+            DefaultHttpClient httpClient = new DefaultHttpClient();
+            HttpGet httpGetRequest = new HttpGet(url[0]);
+            ResponseHandler<String> responseHandler = new BasicResponseHandler();
+
+            try
+            {
+                result = httpClient.execute(httpGetRequest, responseHandler);
+            }
+            catch(Exception e)
+            {
+                e.getStackTrace();
+            }
+
+            httpClient.getConnectionManager().shutdown();
+
+            return result;
+        }
+
+        @Override
+        protected void onPostExecute(String result)
+        {
+            JSONObject jsonObject;
+
+            try
+            {
+                jsonObject = new JSONObject(result);
+                announcementCount = jsonObject.getInt("count");
+            }
+            catch (Exception e)
+            {
+                e.printStackTrace();
+            }
+
+            if(databaseSource.getCount() != announcementCount)
+            {
+                int remainingAnnouncementsCount = announcementCount - databaseSource.getCount();
+                httpAnnouncementRequest.execute(URL_ANNOUNCEMENT + remainingAnnouncementsCount);
+            }
+            else
+            {
+                databaseSource.close();
+            }
+        }
+
+        private class HttpAnnouncementRequestTask extends AsyncTask<String, Void, String>
+        {
+            JSONArray announcementsJsonArray;
+
+            @Override
+            protected String doInBackground(String... url)
+            {
+                String result="";
+                DefaultHttpClient httpClient = new DefaultHttpClient();
+                HttpGet httpGetRequest = new HttpGet(url[0]);
+                ResponseHandler<String> responseHandler = new BasicResponseHandler();
+
+                try
+                {
+                    result = httpClient.execute(httpGetRequest, responseHandler);
+                }
+                catch (Exception e)
+                {
+                    e.printStackTrace();
+                }
+
+                return result;
+            }
+
+            @Override
+            protected void onPostExecute(String result)
+            {
+                try
+                {
+                    JSONObject mainObject = new JSONObject(result);
+                    announcementsJsonArray = mainObject.getJSONArray("details");
+
+                    Log.d("----------------", "----------------");
+
+                    for(int i=0; i<announcementsJsonArray.length(); i++)
+                    {
+                        JSONObject arrayJSONObject = announcementsJsonArray.getJSONObject(i);
+                        Log.d("CLUSTER", arrayJSONObject.getString("cluster"));
+                        Log.d("ANNOUNCEMENT", arrayJSONObject.getString("announcement"));
+                        Log.d("TIME", arrayJSONObject.getString("time"));
+
+                        Announcement announcement = new Announcement(arrayJSONObject.getString("cluster"), arrayJSONObject.getString("announcement"), arrayJSONObject.getString("time"));
+                        databaseSource.insertAnnouncement(announcement);
+                    }
+
+                    Log.d("----------------", "----------------");
+
+                    databaseSource.close();
+                }
+                catch(Exception e)
+                {
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 }

@@ -9,14 +9,19 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.a1kesamose.kuruksastra15.Database.AnnouncementsDatabaseSource;
 import com.a1kesamose.kuruksastra15.R;
+import com.a1kesamose.kuruksastra15.adapter.AnnouncementListAdapter;
 
 public class FragmentAnnouncements extends Fragment
 {
     private static final String NAVIGATION_DRAWER_POSITION = "navigation_drawer_position";
-    ListView announcementListView;
-    TextView announcementIcon;
-    Typeface fontawesomeTypeface;
+    private AnnouncementListAdapter listAdapter;
+    private AnnouncementsDatabaseSource databaseSource;
+
+    private ListView listViewAnnouncements;
+    private TextView textViewIcon;
+    private Typeface fontawesomeTypeface;
 
     public static FragmentAnnouncements newInstance(int navigationDrawerPosition)
     {
@@ -32,11 +37,17 @@ public class FragmentAnnouncements extends Fragment
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
-        View rootView = inflater.inflate(R.layout.fragment_announcements, container, false);
-
         fontawesomeTypeface = Typeface.createFromAsset(getActivity().getAssets(),"fonts/fontawesome-webfont.ttf");
-        announcementIcon = (TextView)rootView.findViewById(R.id.announcement_icon);
-        announcementIcon.setTypeface(fontawesomeTypeface);
+        databaseSource = new AnnouncementsDatabaseSource(getActivity());
+        databaseSource.open();
+        listAdapter = new AnnouncementListAdapter(getActivity(), databaseSource.getAnnouncementList());
+
+        View rootView = inflater.inflate(R.layout.fragment_announcements, container, false);
+        listViewAnnouncements = (ListView)rootView.findViewById(R.id.listView_fragment_announcement);
+        listViewAnnouncements.setAdapter(listAdapter);
+        textViewIcon = (TextView)rootView.findViewById(R.id.textView_icon_fragment_announcements);
+        textViewIcon.setTypeface(fontawesomeTypeface);
+
         return rootView;
     }
 }
