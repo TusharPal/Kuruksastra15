@@ -5,6 +5,7 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +13,6 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.TextView;
 import com.a1kesamose.kuruksastra15.R;
-
 
 
 public class FragmentSettings extends Fragment
@@ -50,7 +50,9 @@ public class FragmentSettings extends Fragment
         mediaCheckBox.setChecked(mediaChecked);
         mediaCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked)
+            {
+                Log.d("NEW_VALUE",String.valueOf(isChecked));
                 sharedPreferences.edit().putBoolean("MEDIA",isChecked).apply();
                 mediaCheckBox.setChecked(isChecked);
             }
@@ -61,7 +63,8 @@ public class FragmentSettings extends Fragment
         thespianCheckBox.setChecked(thespianChecked);
         thespianCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked)
+            {
                 sharedPreferences.edit().putBoolean("THESPIAN",isChecked).apply();
                 thespianCheckBox.setChecked(isChecked);
             }

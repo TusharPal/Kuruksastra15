@@ -11,6 +11,7 @@ import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.preference.PreferenceManager;
 import android.support.v4.app.NotificationCompat;
+import android.util.Log;
 
 import com.a1kesamose.kuruksastra15.Database.AnnouncementsDatabaseSource;
 import com.a1kesamose.kuruksastra15.Objects.Announcement;
@@ -164,13 +165,11 @@ public class AnnouncementBroadcastReceiver extends BroadcastReceiver
 
                         Announcement announcement = new Announcement(arrayJSONObject.getString("cluster"), arrayJSONObject.getString("announcement"), arrayJSONObject.getString("time"));
                         databaseSource.insertAnnouncement(announcement);
-                        boolean announcementPreference = preferences.getBoolean(announcement.ANNOUNCEMENT_CLUSTER,false);
-                        if(announcementPreference)
+                        if(preferences.getBoolean(announcement.ANNOUNCEMENT_CLUSTER,false))
                         {
                             createNotification(announcement, i);
                         }
                     }
-
                     databaseSource.close();
                 }
                 catch(Exception e)

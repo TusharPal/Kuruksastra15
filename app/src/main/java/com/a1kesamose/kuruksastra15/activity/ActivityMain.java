@@ -150,6 +150,8 @@ public class ActivityMain extends ActionBarActivity implements NavigationDrawerF
             case 10:
             {
                 fragmentManager.beginTransaction().replace(R.id.container, FragmentSettings.newInstance(position)).commit();
+
+                break;
             }
         }
     }
@@ -164,7 +166,7 @@ public class ActivityMain extends ActionBarActivity implements NavigationDrawerF
         ActionBar actionBar = getSupportActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
         actionBar.setDisplayShowTitleEnabled(true);
-        actionBar.setTitle(mTitle);
+        actionBar.setTitle("Kuruksastra'15");
     }
 
 
@@ -296,7 +298,7 @@ public class ActivityMain extends ActionBarActivity implements NavigationDrawerF
                 {
                     e.printStackTrace();
                 }
-
+                httpClient.getConnectionManager().shutdown();
                 return result;
             }
 
@@ -311,10 +313,14 @@ public class ActivityMain extends ActionBarActivity implements NavigationDrawerF
                     for(int i=0; i<announcementsJsonArray.length(); i++)
                     {
                         JSONObject arrayJSONObject = announcementsJsonArray.getJSONObject(i);
-
-                        Announcement announcement = new Announcement(arrayJSONObject.getString("cluster"), arrayJSONObject.getString("announcement"), arrayJSONObject.getString("time"));
+                        String time = arrayJSONObject.getString("time");
+                        String announcementTime = time.substring(0, time.length()-3);
+                        Announcement announcement = new Announcement(arrayJSONObject.getString("cluster"), arrayJSONObject.getString("announcement"), announcementTime);
                         databaseSource.insertAnnouncement(announcement);
-                        createNotification(announcement, i);
+                        if(sharedPreferences.getBoolean(announcement.ANNOUNCEMENT_CLUSTER,false))
+                        {
+                            createNotification(announcement, i);
+                        }
                     }
 
                     databaseSource.close();
