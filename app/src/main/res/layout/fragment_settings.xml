@@ -123,6 +123,7 @@
                     android:layout_centerVertical="true"
                     />
                 <CheckBox
+                    android:id="@+id/elits_checkbox"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
@@ -147,6 +148,7 @@
                     android:layout_centerVertical="true"
                     />
                 <CheckBox
+                    android:id="@+id/tlits_checkbox"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
@@ -171,6 +173,7 @@
                     android:layout_centerVertical="true"
                     />
                 <CheckBox
+                    android:id="@+id/hlits_checkbox"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
@@ -195,6 +198,7 @@
                     android:layout_centerVertical="true"
                     />
                 <CheckBox
+                    android:id="@+id/telits_checkbox"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
@@ -219,6 +223,7 @@
                     android:layout_centerVertical="true"
                     />
                 <CheckBox
+                    android:id="@+id/east_dance_checkbox"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
@@ -243,6 +248,7 @@
                     android:layout_centerVertical="true"
                     />
                 <CheckBox
+                    android:id="@+id/west_dance_checkbox"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
@@ -267,6 +273,7 @@
                     android:layout_centerVertical="true"
                     />
                 <CheckBox
+                    android:id="@+id/music_checkbox"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
@@ -291,6 +298,7 @@
                     android:layout_centerVertical="true"
                     />
                 <CheckBox
+                    android:id="@+id/arts_checkbox"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
@@ -315,6 +323,7 @@
                     android:layout_centerVertical="true"
                     />
                 <CheckBox
+                    android:id="@+id/general_checkbox"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"

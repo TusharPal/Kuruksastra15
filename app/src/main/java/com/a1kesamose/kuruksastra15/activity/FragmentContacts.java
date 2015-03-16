@@ -99,11 +99,6 @@ public class FragmentContacts extends Fragment implements AdapterView.OnItemClic
         listItems.add(new ContactDetails("Sanjai Praboo", "+91 9894755668"));
         listItems.add(new ContactDetails("Adithya", "+91 9940032091"));
 
-        listItems.add(new ContactHeader("Western Dance"));
-        listItems.add(new ContactDetails("Sanjai Praboo", "+91 9894755668"));
-        listItems.add(new ContactDetails("Adithya", "+91 9940032091"));
-
-
         listItems.add(new ContactHeader("Fine Arts"));
         listItems.add(new ContactDetails("Syed Ajmal", "+91 9790893730"));
         listItems.add(new ContactDetails("Vinushitha", "+91 9786066980"));
