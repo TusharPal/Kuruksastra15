@@ -1,15 +1,18 @@
 package com.a1kesamose.kuruksastra15.Receiver;
 
+import android.app.Notification;
+import android.app.NotificationManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
-import android.util.Log;
+import android.support.v4.app.NotificationCompat;
 
 import com.a1kesamose.kuruksastra15.Database.AnnouncementsDatabaseSource;
 import com.a1kesamose.kuruksastra15.Objects.Announcement;
+import com.a1kesamose.kuruksastra15.R;
 
 import org.apache.http.client.ResponseHandler;
 import org.apache.http.client.methods.HttpGet;
@@ -22,6 +25,7 @@ public class AnnouncementBroadcastReceiver extends BroadcastReceiver
 {
     public Context context;
     public AnnouncementsDatabaseSource databaseSource;
+    public NotificationManager notificationManager;
 
     @Override
     public void onReceive(Context context, Intent intent)
@@ -29,6 +33,7 @@ public class AnnouncementBroadcastReceiver extends BroadcastReceiver
         this.context = context;
         this.databaseSource = new AnnouncementsDatabaseSource(context);
         this.databaseSource.open();
+        this.notificationManager = (NotificationManager)context.getSystemService(Context.NOTIFICATION_SERVICE);
 
         if(isNetworkAvailable())
         {
@@ -51,6 +56,18 @@ public class AnnouncementBroadcastReceiver extends BroadcastReceiver
             return false;
         }
     }
+
+    public void createNotification(Announcement announcement, int flag)
+    {
+        NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(context);
+        notificationBuilder.setContentTitle(announcement.ANNOUNCEMENT_CLUSTER);
+        notificationBuilder.setContentText(announcement.ANNOUNCEMENT_CONTENT);
+        notificationBuilder.setSmallIcon(R.drawable.ks_icon);
+
+        Notification  notification = notificationBuilder.build();
+        notificationManager.notify(1010 * (flag+1), notification);
+    }
+
     class HttpRequestTask extends AsyncTask<String, Void, String>
     {
         int announcementCount = 0;
@@ -137,20 +154,14 @@ public class AnnouncementBroadcastReceiver extends BroadcastReceiver
                     JSONObject mainObject = new JSONObject(result);
                     announcementsJsonArray = mainObject.getJSONArray("details");
 
-                    Log.d("----------------", "----------------");
-
                     for(int i=0; i<announcementsJsonArray.length(); i++)
                     {
                         JSONObject arrayJSONObject = announcementsJsonArray.getJSONObject(i);
-                        Log.d("CLUSTER", arrayJSONObject.getString("cluster"));
-                        Log.d("ANNOUNCEMENT", arrayJSONObject.getString("announcement"));
-                        Log.d("TIME", arrayJSONObject.getString("time"));
 
                         Announcement announcement = new Announcement(arrayJSONObject.getString("cluster"), arrayJSONObject.getString("announcement"), arrayJSONObject.getString("time"));
                         databaseSource.insertAnnouncement(announcement);
+                        createNotification(announcement, i);
                     }
-
-                    Log.d("----------------", "----------------");
 
                     databaseSource.close();
                 }

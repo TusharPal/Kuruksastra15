@@ -1,6 +1,8 @@
 package com.a1kesamose.kuruksastra15.activity;
 
 import android.app.AlarmManager;
+import android.app.Notification;
+import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
@@ -11,10 +13,10 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.NotificationCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -41,8 +43,9 @@ public class ActivityMain extends ActionBarActivity implements NavigationDrawerF
     private Calendar calendar;
     private SharedPreferences sharedPreferences;
     public AnnouncementsDatabaseSource databaseSource;
+    public NotificationManager notificationManager;
     public HttpCountRequestTask httpCountRequestTask;
-    private String navigationDrawerItemTitles[] = {"About KS", "Events", "Announcements", "KS Upahaar", "Sponsors", "Contacts", "Schedule", "Schedule", "Schedule", "Schedule","Settings"};
+    private String navigationDrawerItemTitles[] = {"About KS", "Events", "Announcements", "KS Upahaar", "Sponsors", "Contacts", "Schedule", "Schedule", "Schedule", "Schedule", "Settings"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -53,6 +56,7 @@ public class ActivityMain extends ActionBarActivity implements NavigationDrawerF
         mNavigationDrawerFragment = (NavigationDrawerFragment)getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
         mNavigationDrawerFragment.setUp(R.id.navigation_drawer,(DrawerLayout) findViewById(R.id.drawer_layout));
         mTitle = getTitle();
+        notificationManager = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
         databaseSource = new AnnouncementsDatabaseSource(this);
         databaseSource.open();
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
@@ -207,6 +211,17 @@ public class ActivityMain extends ActionBarActivity implements NavigationDrawerF
         }
     }
 
+    public void createNotification(Announcement announcement, int flag)
+    {
+        NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this);
+        notificationBuilder.setContentTitle(announcement.ANNOUNCEMENT_CLUSTER);
+        notificationBuilder.setContentText(announcement.ANNOUNCEMENT_CONTENT);
+        notificationBuilder.setSmallIcon(R.drawable.ks_icon);
+
+        Notification  notification = notificationBuilder.build();
+        notificationManager.notify(1010 * (flag+1), notification);
+    }
+
     private class HttpCountRequestTask extends AsyncTask<String, Void, String>
     {
         int announcementCount = 0;
@@ -293,20 +308,14 @@ public class ActivityMain extends ActionBarActivity implements NavigationDrawerF
                     JSONObject mainObject = new JSONObject(result);
                     announcementsJsonArray = mainObject.getJSONArray("details");
 
-                    Log.d("----------------", "----------------");
-
                     for(int i=0; i<announcementsJsonArray.length(); i++)
                     {
                         JSONObject arrayJSONObject = announcementsJsonArray.getJSONObject(i);
-                        Log.d("CLUSTER", arrayJSONObject.getString("cluster"));
-                        Log.d("ANNOUNCEMENT", arrayJSONObject.getString("announcement"));
-                        Log.d("TIME", arrayJSONObject.getString("time"));
 
                         Announcement announcement = new Announcement(arrayJSONObject.getString("cluster"), arrayJSONObject.getString("announcement"), arrayJSONObject.getString("time"));
                         databaseSource.insertAnnouncement(announcement);
+                        createNotification(announcement, i);
                     }
-
-                    Log.d("----------------", "----------------");
 
                     databaseSource.close();
                 }

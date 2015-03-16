@@ -101,7 +101,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
-                android:text="Fotohub"
+                android:text="Media"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@android:color/white"/>
         </LinearLayout>

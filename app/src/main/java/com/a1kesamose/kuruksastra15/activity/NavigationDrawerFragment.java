@@ -1,6 +1,7 @@
 package com.a1kesamose.kuruksastra15.activity;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -17,8 +18,11 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.a1kesamose.kuruksastra15.R;
 import com.a1kesamose.kuruksastra15.adapter.NavigationDrawerListAdapter;
@@ -30,12 +34,14 @@ public class NavigationDrawerFragment extends Fragment
     private NavigationDrawerCallbacks mCallbacks;
     private ActionBarDrawerToggle mDrawerToggle;
     private int mCurrentSelectedPosition = 0;
+    private int easterEggClickCount = 0;
     private boolean mFromSavedInstanceState;
     private boolean mUserLearnedDrawer;
     private NavigationDrawerListAdapter navigationDrawerListAdapter;
 
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerListView;
+    private ImageView imageView;
     private View mFragmentContainerView;
 
     public NavigationDrawerFragment()
@@ -71,6 +77,7 @@ public class NavigationDrawerFragment extends Fragment
     {
         View rootView = inflater.inflate(R.layout.fragment_navigation_drawer, container, false);
         mDrawerListView = (ListView)rootView.findViewById(R.id.listView_fragment_navigation_drawer);
+        imageView = (ImageView)rootView.findViewById(R.id.imageView_fragment_navigation_drawer);
         navigationDrawerListAdapter = new NavigationDrawerListAdapter(getActivity().getApplicationContext(), mCurrentSelectedPosition);
         mDrawerListView.setAdapter(navigationDrawerListAdapter);
         mDrawerListView.setOnItemClickListener(new AdapterView.OnItemClickListener()
@@ -81,6 +88,27 @@ public class NavigationDrawerFragment extends Fragment
                 navigationDrawerListAdapter.setItemSelectedPosition(position);
 
                 selectItem(position);
+            }
+        });
+        imageView.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View view)
+            {
+                switch(view.getId())
+                {
+                    case R.id.imageView_fragment_navigation_drawer:
+                    {
+                        if(easterEggClickCount == 6)
+                        {
+                            createEasterEggDialog();
+                        }
+                        else if(easterEggClickCount > 3)
+                        {
+                            Toast.makeText(getActivity(), easterEggClickCount + " clicks remaining", Toast.LENGTH_SHORT).show();
+                            easterEggClickCount = (easterEggClickCount+1) %7;
+                        }
+                    }
+                }
             }
         });
 
@@ -243,6 +271,14 @@ public class NavigationDrawerFragment extends Fragment
     private ActionBar getActionBar()
     {
         return ((ActionBarActivity) getActivity()).getSupportActionBar();
+    }
+
+    public void createEasterEggDialog()
+    {
+        final Dialog dialog = new Dialog(getActivity());
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.dialog_easter_egg);
+        dialog.show();
     }
 
     public static interface NavigationDrawerCallbacks
