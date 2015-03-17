@@ -36,7 +36,7 @@ public class AnnouncementBroadcastReceiver extends BroadcastReceiver
         this.context = context;
         this.databaseSource = new AnnouncementsDatabaseSource(context);
         this.databaseSource.open();
-        this.notificationManager = (NotificationManager)context.getSystemService(Context.NOTIFICATION_SERVICE);
+        this.notificationManager = (NotificationManager)context.getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);
 
         if(isNetworkAvailable())
         {

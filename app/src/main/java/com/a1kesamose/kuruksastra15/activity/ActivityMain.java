@@ -56,7 +56,7 @@ public class ActivityMain extends ActionBarActivity implements NavigationDrawerF
         mNavigationDrawerFragment = (NavigationDrawerFragment)getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
         mNavigationDrawerFragment.setUp(R.id.navigation_drawer,(DrawerLayout) findViewById(R.id.drawer_layout));
         mTitle = getTitle();
-        notificationManager = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
+        notificationManager = (NotificationManager)this.getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);
         databaseSource = new AnnouncementsDatabaseSource(this);
         databaseSource.open();
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
@@ -68,7 +68,7 @@ public class ActivityMain extends ActionBarActivity implements NavigationDrawerF
             Intent notificationFetchIntent = new Intent(this, AnnouncementBroadcastReceiver.class);
             PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(),1010 , notificationFetchIntent,PendingIntent.FLAG_UPDATE_CURRENT);
             AlarmManager alarmManager = (AlarmManager)this.getSystemService(Context.ALARM_SERVICE);
-            alarmManager.setRepeating(AlarmManager.RTC, calendar.getTimeInMillis(), AlarmManager.INTERVAL_FIFTEEN_MINUTES, pendingIntent);
+            alarmManager.setRepeating(AlarmManager.RTC, calendar.getTimeInMillis(), 300000, pendingIntent);
 
             sharedPreferences.edit().putBoolean("first_launch", true).apply();
         }
@@ -215,6 +215,7 @@ public class ActivityMain extends ActionBarActivity implements NavigationDrawerF
 
     public void createNotification(Announcement announcement, int flag)
     {
+
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this);
         notificationBuilder.setContentTitle(announcement.ANNOUNCEMENT_CLUSTER);
         notificationBuilder.setContentText(announcement.ANNOUNCEMENT_CONTENT);
