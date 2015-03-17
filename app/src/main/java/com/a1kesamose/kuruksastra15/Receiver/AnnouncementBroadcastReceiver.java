@@ -66,7 +66,8 @@ public class AnnouncementBroadcastReceiver extends BroadcastReceiver
         notificationBuilder.setContentTitle(announcement.ANNOUNCEMENT_CLUSTER);
         notificationBuilder.setContentText(announcement.ANNOUNCEMENT_CONTENT);
         notificationBuilder.setSmallIcon(R.drawable.ks_icon);
-
+        notificationBuilder.setDefaults(Notification.DEFAULT_SOUND);
+        notificationBuilder.setDefaults(Notification.DEFAULT_VIBRATE);
         Notification  notification = notificationBuilder.build();
         notificationManager.notify(1010 * (flag+1), notification);
     }
@@ -162,8 +163,9 @@ public class AnnouncementBroadcastReceiver extends BroadcastReceiver
                     for(int i=0; i<announcementsJsonArray.length(); i++)
                     {
                         JSONObject arrayJSONObject = announcementsJsonArray.getJSONObject(i);
-
-                        Announcement announcement = new Announcement(arrayJSONObject.getString("cluster"), arrayJSONObject.getString("announcement"), arrayJSONObject.getString("time"));
+                        String announcementTime = arrayJSONObject.getString("time");
+                        announcementTime = announcementTime.substring(0, announcementTime.length()-3);
+                        Announcement announcement = new Announcement(arrayJSONObject.getString("cluster"), arrayJSONObject.getString("announcement"), announcementTime);
                         databaseSource.insertAnnouncement(announcement);
                         if(preferences.getBoolean(announcement.ANNOUNCEMENT_CLUSTER,false))
                         {

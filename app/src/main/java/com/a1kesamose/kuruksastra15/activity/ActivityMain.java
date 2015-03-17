@@ -45,7 +45,7 @@ public class ActivityMain extends ActionBarActivity implements NavigationDrawerF
     public AnnouncementsDatabaseSource databaseSource;
     public NotificationManager notificationManager;
     public HttpCountRequestTask httpCountRequestTask;
-    private String navigationDrawerItemTitles[] = {"About KS", "Events", "Announcements", "KS Upahaar", "Sponsors", "Contacts", "Schedule", "Schedule", "Schedule", "Schedule", "Settings"};
+    private String navigationDrawerItemTitles[] = {"About KS", "Events", "Announcements", "KS Upahaar", "Sponsors", "Contacts", "Schedule", "Day 1", "Day 2", "Day 3", "Settings"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -219,7 +219,8 @@ public class ActivityMain extends ActionBarActivity implements NavigationDrawerF
         notificationBuilder.setContentTitle(announcement.ANNOUNCEMENT_CLUSTER);
         notificationBuilder.setContentText(announcement.ANNOUNCEMENT_CONTENT);
         notificationBuilder.setSmallIcon(R.drawable.ks_icon);
-
+        notificationBuilder.setDefaults(Notification.DEFAULT_SOUND);
+        notificationBuilder.setDefaults(Notification.DEFAULT_VIBRATE);
         Notification  notification = notificationBuilder.build();
         notificationManager.notify(1010 * (flag+1), notification);
     }
@@ -313,8 +314,8 @@ public class ActivityMain extends ActionBarActivity implements NavigationDrawerF
                     for(int i=0; i<announcementsJsonArray.length(); i++)
                     {
                         JSONObject arrayJSONObject = announcementsJsonArray.getJSONObject(i);
-                        String time = arrayJSONObject.getString("time");
-                        String announcementTime = time.substring(0, time.length()-3);
+                        String announcementTime = arrayJSONObject.getString("time");
+                        announcementTime = announcementTime.substring(0, announcementTime.length()-3);
                         Announcement announcement = new Announcement(arrayJSONObject.getString("cluster"), arrayJSONObject.getString("announcement"), announcementTime);
                         databaseSource.insertAnnouncement(announcement);
                         if(sharedPreferences.getBoolean(announcement.ANNOUNCEMENT_CLUSTER,false))
