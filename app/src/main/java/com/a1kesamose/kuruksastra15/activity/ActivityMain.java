@@ -64,11 +64,13 @@ public class ActivityMain extends ActionBarActivity implements NavigationDrawerF
 
         if(!sharedPreferences.getBoolean("first_launch", false))
         {
+            sharedPreferences.edit().putBoolean("UPDATE", true).apply();
+
             calendar = Calendar.getInstance();
             Intent notificationFetchIntent = new Intent(this, AnnouncementBroadcastReceiver.class);
             PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(),1010 , notificationFetchIntent,PendingIntent.FLAG_UPDATE_CURRENT);
             AlarmManager alarmManager = (AlarmManager)this.getSystemService(Context.ALARM_SERVICE);
-            alarmManager.setRepeating(AlarmManager.RTC, calendar.getTimeInMillis(), 300000, pendingIntent);
+            alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), 300000, pendingIntent);
 
             sharedPreferences.edit().putBoolean("first_launch", true).apply();
         }
@@ -319,7 +321,7 @@ public class ActivityMain extends ActionBarActivity implements NavigationDrawerF
                         announcementTime = announcementTime.substring(0, announcementTime.length()-3);
                         Announcement announcement = new Announcement(arrayJSONObject.getString("cluster"), arrayJSONObject.getString("announcement"), announcementTime);
                         databaseSource.insertAnnouncement(announcement);
-                        if(sharedPreferences.getBoolean(announcement.ANNOUNCEMENT_CLUSTER,false))
+                        if(sharedPreferences.getBoolean(announcement.ANNOUNCEMENT_CLUSTER, false))
                         {
                             createNotification(announcement, i);
                         }

@@ -23,18 +23,18 @@
                 android:rowCount="14"
                 android:columnCount="21">
 
-                <!--Locations-->
-
-                <TextView
+                <Button
+                    android:id="@+id/button_legend_fragment_schedule_day_two"
                     android:layout_row="0"
                     android:layout_rowSpan="1"
                     android:layout_column="0"
                     android:layout_columnSpan="1"
                     android:layout_margin="4dp"
-                    android:text="Day 2"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@color/yellow"/>
+                    android:text="Flavours"
+                    android:textColor="@color/background_dark_grey"
+                    android:background="@drawable/selector_button"/>
 
+                <!--Locations-->
                 <TextView
                     android:layout_row="1"
                     android:layout_rowSpan="1"
@@ -154,20 +154,6 @@
                     android:text="Main stage"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="@color/yellow"/>
-
-                <Button
-                    android:id="@+id/button_legend_fragment_schedule_day_two"
-                    android:layout_row="13"
-                    android:layout_rowSpan="1"
-                    android:layout_column="0"
-                    android:layout_columnSpan="1"
-                    android:layout_margin="4dp"
-                    android:text="Flavours"
-                    android:textColor="@color/background_dark_grey"
-                    android:background="@drawable/selector_button"
-                    android:paddingLeft="10dp"
-                    android:paddingRight="10dp"
-                    />
 
                 <!--Time slots-->
 
