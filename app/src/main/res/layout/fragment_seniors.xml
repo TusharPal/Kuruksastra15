@@ -41,29 +41,200 @@
             android:layout_gravity="left"
             >
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/body"
-            />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:padding="16dp"
+                android:textColor="#ffffff"
+                android:text="@string/body"
+                android:layout_gravity="fill_horizontal"
+                />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="15sp"
-            android:textColor="@color/yellow"
-            android:text="Kuruksastra to me is everything. It's that time of the year when you
-go up on a stage, be it as a participant or an organizer; you stand
-before hundreds of people, and you stand before your peers and let
-people know you mean something.
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.2dp"
+                android:background="@color/yellow"
+                />
 
-My very first Kuruksastra - it was on my 18th birthday. I walked up
-the stage at Vidyut Vihar. An entire auditorium sang happy birthday to
-me, and I had goosebumps then just as I've had goosebumps every single
-Kuruksastra that I've had the privilege and honour of being a part of.
-"
-            />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:padding="16dp"
+                android:textColor="#ffffff"
+                android:text="@string/shilpa"
+                android:layout_gravity="fill_horizontal"
+                />
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.2dp"
+                android:background="@color/yellow"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:padding="16dp"
+                android:textColor="#ffffff"
+                android:text="@string/kayalvizhi"
+                android:layout_gravity="fill_horizontal"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.2dp"
+                android:background="@color/yellow"
+                />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:padding="16dp"
+                android:textColor="#ffffff"
+                android:text="@string/nousif"
+                android:layout_gravity="fill_horizontal"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.2dp"
+                android:background="@color/yellow"
+                />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:padding="16dp"
+                android:textColor="#ffffff"
+                android:text="@string/bhram"
+                android:layout_gravity="fill_horizontal"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.2dp"
+                android:background="@color/yellow"
+                />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:padding="16dp"
+                android:textColor="#ffffff"
+                android:text="@string/x"
+                android:layout_gravity="fill_horizontal"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.2dp"
+                android:background="@color/yellow"
+                />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:padding="16dp"
+                android:textColor="#ffffff"
+                android:text="@string/sherikar"
+                android:layout_gravity="fill_horizontal"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.2dp"
+                android:background="@color/yellow"
+                />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:padding="16dp"
+                android:textColor="#ffffff"
+                android:text="@string/chandini"
+                android:layout_gravity="fill_horizontal"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.2dp"
+                android:background="@color/yellow"
+                />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:padding="16dp"
+                android:textColor="#ffffff"
+                android:text="@string/prabhu"
+                android:layout_gravity="fill_horizontal"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.2dp"
+                android:background="@color/yellow"
+                />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:padding="16dp"
+                android:textColor="#ffffff"
+                android:text="@string/rajagopal"
+                android:layout_gravity="fill_horizontal"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.2dp"
+                android:background="@color/yellow"
+                />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:padding="16dp"
+                android:textColor="#ffffff"
+                android:text="@string/guru"
+                android:layout_gravity="fill_horizontal"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.2dp"
+                android:background="@color/yellow"
+                />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:padding="16dp"
+                android:textColor="#ffffff"
+                android:text="@string/vishveshwaran"
+                android:layout_gravity="fill_horizontal"
+                />
         </LinearLayout>
     </ScrollView>
 

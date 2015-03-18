@@ -9,8 +9,8 @@
         android:id="@+id/imageView_fragment_navigation_drawer"
         android:layout_width="match_parent"
         android:layout_height="120dp"
-        android:src="@drawable/ks_icon"
-        android:background="@color/yellow"/>
+        android:src="@drawable/ks_nav_drawer"
+        android:background="@drawable/background_gradient"/>
 
     <ListView
         android:id="@+id/listView_fragment_navigation_drawer"
