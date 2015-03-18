@@ -108,31 +108,31 @@ public class ActivityMain extends ActionBarActivity implements NavigationDrawerF
             }
             case 3:
             {
-                fragmentManager.beginTransaction().replace(R.id.container, FragmentKSUphaar.newInstance(position)).commit();
+                fragmentManager.beginTransaction().replace(R.id.container, FragmentProShows.newInstance(position)).commit();
 
                 break;
             }
             case 4:
             {
-                fragmentManager.beginTransaction().replace(R.id.container, FragmentSponsors.newInstance(position)).commit();
+                fragmentManager.beginTransaction().replace(R.id.container, FragmentKSUphaar.newInstance(position)).commit();
 
                 break;
             }
             case 5:
             {
-                fragmentManager.beginTransaction().replace(R.id.container, FragmentContacts.newInstance(position)).commit();
+                fragmentManager.beginTransaction().replace(R.id.container, FragmentSeniors.newInstance(position)).commit();
 
                 break;
             }
             case 6:
             {
-                fragmentManager.beginTransaction().replace(R.id.container, FragmentSchedule.newInstance(position)).commit();
+                fragmentManager.beginTransaction().replace(R.id.container, FragmentSponsors.newInstance(position)).commit();
 
                 break;
             }
             case 7:
             {
-                fragmentManager.beginTransaction().replace(R.id.container, FragmentSchedule.newInstance(position)).commit();
+                fragmentManager.beginTransaction().replace(R.id.container, FragmentContacts.newInstance(position)).commit();
 
                 break;
             }
@@ -148,8 +148,20 @@ public class ActivityMain extends ActionBarActivity implements NavigationDrawerF
 
                 break;
             }
-
             case 10:
+            {
+                fragmentManager.beginTransaction().replace(R.id.container, FragmentSchedule.newInstance(position)).commit();
+
+                break;
+            }
+            case 11:
+            {
+                fragmentManager.beginTransaction().replace(R.id.container, FragmentSchedule.newInstance(position)).commit();
+
+                break;
+            }
+
+            case 12:
             {
                 fragmentManager.beginTransaction().replace(R.id.container, FragmentSettings.newInstance(position)).commit();
 
@@ -184,20 +196,6 @@ public class ActivityMain extends ActionBarActivity implements NavigationDrawerF
         }
 
         return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item)
-    {
-        switch(item.getItemId())
-        {
-            case R.id.action_settings:
-            {
-                break;
-            }
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 
     public boolean isNetworkAvailable()

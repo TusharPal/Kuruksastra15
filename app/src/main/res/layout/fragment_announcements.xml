@@ -13,7 +13,7 @@
         android:layout_gravity="center_horizontal"
         android:textColor="@color/yellow"
         android:text="@string/announcements_icon"
-        android:textSize="30sp"
+        android:textSize="22sp"
         android:padding="10dp"/>
 
     <View

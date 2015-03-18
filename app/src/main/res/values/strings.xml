@@ -175,16 +175,18 @@
     <string name="schedule_icon">&#xf017;</string>
     <string name="call">&#xf10b;</string>
     <string name="sms">&#xf003;</string>
-    <string name="save">&#xf0c7;</string>
     <string name="settings">&#xf013;</string>
     <string name="announcements_icon">&#xf0a1;</string>
-    <string name="check">&#xf00c;</string>
+    <string name="proshows">&#xf001;</string>
+    <string name="seniors">&#xf0e6;</string>
 
     <string-array name="icons">
         <item>&#xf05a;</item>   <!--About KS-->
         <item>&#xf073;</item>   <!--Events-->
         <item>&#xf0a1;</item>   <!--Announcements-->
+        <item>&#xf001;</item>   <!--Pro shows-->
         <item>&#xf1ae;</item>   <!--Uphaar-->
+        <item>&#xf0e6;</item>   <!--Seniors-->
         <item>&#xf005;</item>   <!--Sponsors-->
         <item>&#xf095;</item>   <!--Contacts-->
         <item>&#xf017;</item>   <!--Schedule-->
