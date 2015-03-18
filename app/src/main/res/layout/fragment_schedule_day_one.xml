@@ -8,6 +8,7 @@
 
 
     <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <HorizontalScrollView
@@ -350,7 +351,7 @@
                     android:layout_gravity="fill_horizontal"
                     android:gravity="center"
                     android:background="@color/telegu_lits"
-                    android:text="Swara madhuri"
+                    android:text="Laddu Kavala Naayana"
                     android:textColor="@android:color/white"
                     android:textAppearance="?android:attr/textAppearanceLarge"/>
 
@@ -610,7 +611,7 @@
                     android:layout_row="9"
                     android:layout_rowSpan="1"
                     android:layout_column="2"
-                    android:layout_columnSpan="8"
+                    android:layout_columnSpan="6"
                     android:layout_marginLeft="1dp"
                     android:layout_marginRight="1dp"
                     android:layout_gravity="fill_horizontal"
@@ -622,6 +623,20 @@
 
                 <TextView
                     android:layout_row="9"
+                    android:layout_rowSpan="1"
+                    android:layout_column="12"
+                    android:layout_columnSpan="6"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginRight="1dp"
+                    android:layout_gravity="fill_horizontal"
+                    android:gravity="center"
+                    android:background="@color/dramatics"
+                    android:text="Dramatics workshop"
+                    android:textColor="@android:color/white"
+                    android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+                <TextView
+                    android:layout_row="12"
                     android:layout_rowSpan="1"
                     android:layout_column="11"
                     android:layout_columnSpan="4"
@@ -635,7 +650,7 @@
                     android:textAppearance="?android:attr/textAppearanceLarge"/>
 
                 <TextView
-                    android:layout_row="9"
+                    android:layout_row="12"
                     android:layout_rowSpan="1"
                     android:layout_column="15"
                     android:layout_columnSpan="3"
@@ -733,10 +748,10 @@
                     android:textAppearance="?android:attr/textAppearanceLarge"/>
 
                 <TextView
-                    android:layout_row="12"
+                    android:layout_row="9"
                     android:layout_rowSpan="1"
-                    android:layout_column="12"
-                    android:layout_columnSpan="6"
+                    android:layout_column="8"
+                    android:layout_columnSpan="4"
                     android:layout_marginLeft="1dp"
                     android:layout_marginRight="1dp"
                     android:layout_gravity="fill_horizontal"
