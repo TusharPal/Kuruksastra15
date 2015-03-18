@@ -36,7 +36,7 @@ public class FragmentSchedule extends Fragment implements View.OnClickListener
 
         switch(getArguments().getInt(NAVIGATION_DRAWER_POSITION))
         {
-            case 6:
+            case 8:
             {
                 rootView = inflater.inflate(R.layout.fragment_schedule_day_one, container, false);
                 button = (Button)rootView.findViewById(R.id.button_legend_fragment_schedule_day_one);
@@ -45,7 +45,7 @@ public class FragmentSchedule extends Fragment implements View.OnClickListener
 
 //                return rootView;
             }
-            case 7:
+            case 9:
             {
                 rootView = inflater.inflate(R.layout.fragment_schedule_day_one, container, false);
                 button = (Button)rootView.findViewById(R.id.button_legend_fragment_schedule_day_one);
@@ -53,7 +53,7 @@ public class FragmentSchedule extends Fragment implements View.OnClickListener
                 break;
 //                return rootView;
             }
-            case 8:
+            case 10:
             {
                 rootView = inflater.inflate(R.layout.fragment_schedule_day_two, container, false);
                 button = (Button)rootView.findViewById(R.id.button_legend_fragment_schedule_day_two);
@@ -61,7 +61,7 @@ public class FragmentSchedule extends Fragment implements View.OnClickListener
                 break;
 //                return rootView;
             }
-            case 9:
+            case 11:
             {
                 rootView = inflater.inflate(R.layout.fragment_schedule_day_three, container, false);
                 button = (Button)rootView.findViewById(R.id.button_legend_fragment_schedule_day_three);
