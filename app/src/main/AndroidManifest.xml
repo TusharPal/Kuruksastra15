@@ -27,7 +27,7 @@
 
         <activity
             android:name=".activity.ActivitySplash"
-            android:label="@string/title_activity_activity_splash"
+            android:label="@string/app_name"
             android:theme="@style/Theme.AppCompat.NoActionBar"
             >
             <intent-filter>
